@@ -1,0 +1,1270 @@
+
+**** Clean-only build of configuration Debug for project LCR_TESTER ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 clean -O 
+ 
+subdir_rules.mk:6: *** target pattern contains no '%'.  Stop.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_TESTER ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/LCR_TESTER" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+ 
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'main_lcr_tester.obj' failed
+"../main_lcr_tester.c", line 22: fatal error #1965: cannot open source file "tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../main_lcr_tester.c".
+Compilation terminated.
+gmake: *** [main_lcr_tester.obj] Error 1
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/LCR_TESTER" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_TESTER ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+subdir_rules.mk:6: *** target pattern contains no '%'.  Stop.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_TESTER ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+subdir_rules.mk:6: *** target pattern contains no '%'.  Stop.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_TESTER ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../clock.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/LCR_TESTER" --include_path="Libraries" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="clock.d_raw"  "../clock.c"
+Finished building: "../clock.c"
+ 
+Building file: "../wait.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/LCR_TESTER" --include_path="Libraries" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="wait.d_raw"  "../wait.c"
+Finished building: "../wait.c"
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/LCR_TESTER" --include_path="Libraries" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/LCR_TESTER" --include_path="Libraries" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+Finished building: "../main_lcr_tester.c"
+ 
+Building file: "../lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/LCR_TESTER" --include_path="Libraries" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "../lcr.c"
+Finished building: "../lcr.c"
+ 
+Building file: "../display.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/LCR_TESTER" --include_path="Libraries" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="display.d_raw"  "../display.c"
+Finished building: "../display.c"
+ 
+Building file: "../gpio.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/LCR_TESTER" --include_path="Libraries" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs:Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio.d_raw"  "../gpio.c"
+Finished building: "../gpio.c"
+ 
+Building target: "LCR_TESTER.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR_TESTER.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_TESTER_linkInfo.xml" --rom_model -o "LCR_TESTER.out" "./clock.obj" "./display.obj" "./gpio.obj" "./lcr.obj" "./main_lcr_tester.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+error #10056: symbol "initDisp" redefined: first defined in "./display.obj"; redefined in "./lcr.obj"
+ 
+ undefined first referenced     
+  symbol       in file          
+ --------- ----------------     
+ initLCR   ./main_lcr_tester.obj
+ 
+error #10234-D: unresolved symbols remain
+error #10010: errors encountered during linking; "LCR_TESTER.out" not built
+gmake[1]: *** [LCR_TESTER.out] Error 1
+ 
+>> Compilation failure
+makefile:145: recipe for target 'LCR_TESTER.out' failed
+gmake: *** [all] Error 2
+makefile:141: recipe for target 'all' failed
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_TESTER ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+lcr.d:4: *** target pattern contains no '%'.  Stop.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../clock.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="clock.d_raw"  "../clock.c"
+Finished building: "../clock.c"
+ 
+Building file: "../wait.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="wait.d_raw"  "../wait.c"
+Finished building: "../wait.c"
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+Finished building: "../main_lcr_tester.c"
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "../lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "../lcr.c"
+Finished building: "../lcr.c"
+ 
+Building file: "../display.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="display.d_raw"  "../display.c"
+Finished building: "../display.c"
+ 
+Building file: "../gpio.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio.d_raw"  "../gpio.c"
+Finished building: "../gpio.c"
+ 
+Building target: "LCR_Tester.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR_Tester.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_Tester_linkInfo.xml" --rom_model -o "LCR_Tester.out" "./clock.obj" "./display.obj" "./gpio.obj" "./lcr.obj" "./main_lcr_tester.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "LCR_Tester.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+ 
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'lcr.obj' failed
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c", line 19: fatal error #1965: cannot open source file "lcr.h"
+1 catastrophic error detected in the compilation of "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c".
+Compilation terminated.
+gmake: *** [lcr.obj] Error 1
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+ 
+>> Compilation failure
+subdir_rules.mk:35: recipe for target 'main_lcr_tester.obj' failed
+"../main_lcr_tester.c", line 22: fatal error #1965: cannot open source file "tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../main_lcr_tester.c".
+Compilation terminated.
+gmake: *** [main_lcr_tester.obj] Error 1
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="clock.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="wait.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="display.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+ 
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'lcr.obj' failed
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c", line 19: fatal error #1965: cannot open source file "lcr.h"
+1 catastrophic error detected in the compilation of "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c".
+Compilation terminated.
+gmake: *** [lcr.obj] Error 1
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+ 
+>> Compilation failure
+subdir_rules.mk:35: recipe for target 'main_lcr_tester.obj' failed
+"../main_lcr_tester.c", line 22: fatal error #1965: cannot open source file "tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../main_lcr_tester.c".
+Compilation terminated.
+gmake: *** [main_lcr_tester.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+ 
+>> Compilation failure
+subdir_rules.mk:35: recipe for target 'main_lcr_tester.obj' failed
+"../main_lcr_tester.c", line 22: fatal error #1965: cannot open source file "tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../main_lcr_tester.c".
+Compilation terminated.
+gmake: *** [main_lcr_tester.obj] Error 1
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+ 
+>> Compilation failure
+subdir_rules.mk:35: recipe for target 'main_lcr_tester.obj' failed
+"../main_lcr_tester.c", line 22: fatal error #1965: cannot open source file "tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../main_lcr_tester.c".
+Compilation terminated.
+gmake: *** [main_lcr_tester.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+ 
+>> Compilation failure
+subdir_rules.mk:35: recipe for target 'main_lcr_tester.obj' failed
+"../main_lcr_tester.c", line 22: fatal error #1965: cannot open source file "tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../main_lcr_tester.c".
+Compilation terminated.
+gmake: *** [main_lcr_tester.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+ 
+>> Compilation failure
+subdir_rules.mk:35: recipe for target 'main_lcr_tester.obj' failed
+"../main_lcr_tester.c", line 23: fatal error #1965: cannot open source file "clock.h"
+1 catastrophic error detected in the compilation of "../main_lcr_tester.c".
+Compilation terminated.
+gmake: *** [main_lcr_tester.obj] Error 1
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="clock.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="wait.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="display.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+ 
+>> Compilation failure
+subdir_rules.mk:35: recipe for target 'main_lcr_tester.obj' failed
+"../main_lcr_tester.c", line 22: fatal error #1965: cannot open source file "tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../main_lcr_tester.c".
+Compilation terminated.
+gmake: *** [main_lcr_tester.obj] Error 1
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="clock.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="wait.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="display.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+ 
+>> Compilation failure
+subdir_rules.mk:35: recipe for target 'main_lcr_tester.obj' failed
+"../main_lcr_tester.c", line 22: fatal error #1965: cannot open source file "tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../main_lcr_tester.c".
+Compilation terminated.
+gmake: *** [main_lcr_tester.obj] Error 1
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="clock.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="wait.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="display.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="clock.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="wait.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+Finished building: "../main_lcr_tester.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="display.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+ 
+Building target: "LCR_Tester.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR_Tester.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_Tester_linkInfo.xml" --rom_model -o "LCR_Tester.out" "./clock.obj" "./display.obj" "./gpio.obj" "./lcr.obj" "./main_lcr_tester.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "LCR_Tester.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+gmake[1]: 'LCR_Tester.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+gmake[1]: 'LCR_Tester.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr.d_raw"  "../main_lcr.c"
+ 
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'main_lcr.obj' failed
+"../main_lcr.c", line 21: fatal error #1965: cannot open source file "tm4c123gh6pm.h"
+1 catastrophic error detected in the compilation of "../main_lcr.c".
+Compilation terminated.
+gmake: *** [main_lcr.obj] Error 1
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="clock.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="wait.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="clock.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="wait.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+ 
+Building file: "../main_lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr.d_raw"  "../main_lcr.c"
+Finished building: "../main_lcr.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+ 
+Building target: "LCR.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_linkInfo.xml" --rom_model -o "LCR.out" "./clock.obj" "./gpio.obj" "./lcr.obj" "./main_lcr.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "LCR.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'buttons.obj' failed
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 75: error #1148: a declaration cannot have a label
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 75: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 75: warning #93-D: identifier-list parameters may only be used in a function definition
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 75: error #161: declaration is incompatible with previous "enablePinInterrupt" (declared at line 61 of "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.h")
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 76: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 76: warning #93-D: identifier-list parameters may only be used in a function definition
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 76: error #161: declaration is incompatible with previous "selectPinInterruptRisingEdge" (declared at line 56 of "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.h")
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 79: error #1148: a declaration cannot have a label
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 79: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 79: warning #93-D: identifier-list parameters may only be used in a function definition
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 80: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 80: warning #93-D: identifier-list parameters may only be used in a function definition
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 83: error #1148: a declaration cannot have a label
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 83: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 83: warning #93-D: identifier-list parameters may only be used in a function definition
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 84: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 84: warning #93-D: identifier-list parameters may only be used in a function definition
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 87: error #1148: a declaration cannot have a label
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 87: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 87: warning #93-D: identifier-list parameters may only be used in a function definition
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 88: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 88: warning #93-D: identifier-list parameters may only be used in a function definition
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 91: error #1148: a declaration cannot have a label
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 91: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 91: warning #93-D: identifier-list parameters may only be used in a function definition
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 92: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 92: warning #93-D: identifier-list parameters may only be used in a function definition
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 95: error #1148: a declaration cannot have a label
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 95: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 95: warning #93-D: identifier-list parameters may only be used in a function definition
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 96: error #41: expected an identifier
+"/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c", line 96: warning #93-D: identifier-list parameters may only be used in a function definition
+20 errors detected in the compilation of "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c".
+gmake: *** [buttons.obj] Error 1
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="clock.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="wait.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "../main_buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_buttons.d_raw"  "../main_buttons.c"
+Finished building: "../main_buttons.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+ 
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+gmake[1]: 'Buttons.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_buttons.d_raw"  "../main_buttons.c"
+Finished building: "../main_buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_buttons.d_raw"  "../main_buttons.c"
+Finished building: "../main_buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "../main_buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_buttons.d_raw"  "../main_buttons.c"
+Finished building: "../main_buttons.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "../main_buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_buttons.d_raw"  "../main_buttons.c"
+Finished building: "../main_buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_buttons.d_raw"  "../main_buttons.c"
+Finished building: "../main_buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+gmake[1]: 'Buttons.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_buttons.d_raw"  "../main_buttons.c"
+Finished building: "../main_buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+gmake[1]: 'Buttons.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "../main_buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_buttons.d_raw"  "../main_buttons.c"
+Finished building: "../main_buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../tm4c123gh6pm_startup_ccs.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="tm4c123gh6pm_startup_ccs.d_raw"  "../tm4c123gh6pm_startup_ccs.c"
+Finished building: "../tm4c123gh6pm_startup_ccs.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="clock.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/clock.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="wait.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/wait.c"
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+Finished building: "../main_lcr_tester.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="display.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/display.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/gpio.c"
+ 
+Building target: "LCR_Tester.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR_Tester.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_Tester_linkInfo.xml" --rom_model -o "LCR_Tester.out" "./buttons.obj" "./clock.obj" "./display.obj" "./gpio.obj" "./lcr.obj" "./main_lcr_tester.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "LCR_Tester.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_buttons.d_raw"  "../main_buttons.c"
+Finished building: "../main_buttons.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+gmake[1]: 'Buttons.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="lcr.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/lcr.c"
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+Finished building: "../main_lcr_tester.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "LCR_Tester.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR_Tester.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_Tester_linkInfo.xml" --rom_model -o "LCR_Tester.out" "./buttons.obj" "./clock.obj" "./display.obj" "./gpio.obj" "./lcr.obj" "./main_lcr_tester.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "LCR_Tester.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+gmake[1]: 'Buttons.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "LCR_Tester.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR_Tester.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_Tester_linkInfo.xml" --rom_model -o "LCR_Tester.out" "./buttons.obj" "./clock.obj" "./display.obj" "./gpio.obj" "./lcr.obj" "./main_lcr_tester.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "LCR_Tester.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+Finished building: "../main_lcr_tester.c"
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "LCR_Tester.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR_Tester.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_Tester_linkInfo.xml" --rom_model -o "LCR_Tester.out" "./buttons.obj" "./clock.obj" "./display.obj" "./gpio.obj" "./lcr.obj" "./main_lcr_tester.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "LCR_Tester.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project Buttons ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Buttons" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "Buttons.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Buttons.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Buttons_linkInfo.xml" --rom_model -o "Buttons.out" "./buttons.obj" "./clock.obj" "./gpio.obj" "./main_buttons.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "Buttons.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="buttons.d_raw"  "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+Finished building: "/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries/buttons.c"
+ 
+Building target: "LCR_Tester.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR_Tester.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_Tester_linkInfo.xml" --rom_model -o "LCR_Tester.out" "./buttons.obj" "./clock.obj" "./display.obj" "./gpio.obj" "./lcr.obj" "./main_lcr_tester.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "LCR_Tester.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+Finished building: "../main_lcr_tester.c"
+ 
+Building target: "LCR_Tester.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR_Tester.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_Tester_linkInfo.xml" --rom_model -o "LCR_Tester.out" "./buttons.obj" "./clock.obj" "./display.obj" "./gpio.obj" "./lcr.obj" "./main_lcr_tester.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "LCR_Tester.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+Finished building: "../main_lcr_tester.c"
+ 
+Building target: "LCR_Tester.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR_Tester.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_Tester_linkInfo.xml" --rom_model -o "LCR_Tester.out" "./buttons.obj" "./clock.obj" "./display.obj" "./gpio.obj" "./lcr.obj" "./main_lcr_tester.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "LCR_Tester.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+gmake[1]: 'LCR_Tester.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project LCR_Tester ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+Building file: "../main_lcr_tester.c"
+Invoking: Arm Compiler
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/LCR_Tester" --include_path="/Users/nathanfusselman/Documents/School/Spring_2021/CSE 5342/Labs_Projects/Libraries" --include_path="Libraries" --include_path="/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main_lcr_tester.d_raw"  "../main_lcr_tester.c"
+Finished building: "../main_lcr_tester.c"
+ 
+Building target: "LCR_Tester.out"
+Invoking: Arm Linker
+"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"LCR_Tester.map" --heap_size=0 --stack_size=512 -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/lib" -i"/Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="LCR_Tester_linkInfo.xml" --rom_model -o "LCR_Tester.out" "./buttons.obj" "./clock.obj" "./display.obj" "./gpio.obj" "./lcr.obj" "./main_lcr_tester.obj" "./tm4c123gh6pm_startup_ccs.obj" "./wait.obj" "../tm4c123gh6pm.cmd"  -llibc.a 
+<Linking>
+Finished building target: "LCR_Tester.out"
+ 
+
+**** Build Finished ****

@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<launchPerspectives>\n<launchPerspective configurationType\="com.ti.ccstudio.debug.launchType.device.debugging" mode\="debug" perspective\="perspective_none"/>\n<launchPerspective configurationType\="com.ti.ccstudio.debug.launchType.device.debugging" delegate\="com.ti.ccstudio.debug.launchType.device.debugging" mode\="debug" perspective\="perspective_none"/>\n</launchPerspectives>\n
+org.eclipse.debug.ui.outColor=170,170,170
+overriddenByCSS=,org.eclipse.debug.ui.outColor,
+pref_state_memento.org.eclipse.debug.ui.DebugVieworg.eclipse.debug.ui.DebugView=<?xml version\="1.0" encoding\="UTF-8"?>\n<DebugViewMemento org.eclipse.debug.ui.BREADCRUMB_DROPDOWN_AUTO_EXPAND\="false"/>
+preferredDetailPanes=NumberFormatPane\:NumberFormatPane|DefaultDetailPane\:DefaultDetailPane|
+preferredTargets=com.ti.ccstudio.debug.ui.editorToggleBreakpointTarget\:com.ti.ccstudio.debug.ui.editorToggleBreakpointTarget|com.ti.ccstudio.debug.ui.editorToggleBreakpointTarget,org.eclipse.cdt.debug.ui.toggleCBreakpointTarget,org.eclipse.cdt.debug.ui.toggleCDynamicPrintfTarget\:com.ti.ccstudio.debug.ui.editorToggleBreakpointTarget|

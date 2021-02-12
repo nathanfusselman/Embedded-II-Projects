@@ -1,0 +1,67 @@
+// LCR Library
+// Nathan Fusselman
+
+//-----------------------------------------------------------------------------
+// Hardware Target
+//-----------------------------------------------------------------------------
+
+// Target Platform: EK-TM4C123GXL
+// Target uC:       TM4C123GH6PM
+// System Clock:    -
+
+// Hardware configuration:
+// LCR Module
+
+//-----------------------------------------------------------------------------
+// Device includes, defines, and assembler directives
+//-----------------------------------------------------------------------------
+
+#include <lcr.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include "gpio.h"
+#include "wait.h"
+#include "tm4c123gh6pm.h"
+
+#define RS PORTC,6 //PIN: 4
+#define RW PORTC,5 //PIN: 5
+#define E PORTC,4 //PIN: 6
+#define DB0 PORTB,0 //PIN: 7
+#define DB1 PORTB,1 //PIN: 8
+#define DB2 PORTB,2 //PIN: 9
+#define DB3 PORTB,3 //PIN: 10
+#define DB4 PORTB,4 //PIN: 11
+#define DB5 PORTB,5 //PIN: 12
+#define DB6 PORTB,6 //PIN: 13
+#define DB7 PORTB,7 //PIN: 14
+
+//-----------------------------------------------------------------------------
+// Global variables
+//-----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+// Subroutines
+//-----------------------------------------------------------------------------
+
+// Initialize Display
+void initDisp()
+{
+    // Enable clocks
+    enablePort(PORTB);
+    enablePort(PORTC);
+
+    // Configure Control pins
+    selectPinPushPullOutput(RS);
+    selectPinPushPullOutput(RW);
+    selectPinPushPullOutput(E);
+
+    // Configure Data pins
+    selectPinOpenDrainOutput(DB0);
+    selectPinOpenDrainOutput(DB1);
+    selectPinOpenDrainOutput(DB2);
+    selectPinOpenDrainOutput(DB3);
+    selectPinOpenDrainOutput(DB4);
+    selectPinOpenDrainOutput(DB5);
+    selectPinOpenDrainOutput(DB6);
+    selectPinOpenDrainOutput(DB7);
+}

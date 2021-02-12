@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project Display ****
+
+/Applications/ti/ccs1020/ccs/utils/bin/gmake -k -j 15 all -O 
+ 
+gmake[1]: 'Display.out' is up to date.
+
+**** Build Finished ****

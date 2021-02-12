@@ -1,0 +1,90 @@
+// LCR Tester
+// Nathan Fusselman
+
+//-----------------------------------------------------------------------------
+// Hardware Target
+//-----------------------------------------------------------------------------
+
+// Target Platform: EK-TM4C123GXL Evaluation Board
+// Target uC:       TM4C123GH6PM
+// System Clock:    40 MHz
+
+// Hardware configuration:
+// LCR Module, PCB Model
+// Display Module, PCB Model
+
+//-----------------------------------------------------------------------------
+// Device includes, defines, and assembler directives
+//-----------------------------------------------------------------------------
+
+#include <stdint.h>
+#include <stdbool.h>
+#include "tm4c123gh6pm.h"
+#include "clock.h"
+#include "gpio.h"
+#include "lcr.h"
+#include "display.h"
+#include "buttons.h"
+
+//-----------------------------------------------------------------------------
+// Subroutines
+//-----------------------------------------------------------------------------
+
+// Initialize Hardware
+void initHw()
+{
+    // Initialize system clock to 40 MHz
+    initSystemClockTo40Mhz();
+}
+
+//-----------------------------------------------------------------------------
+// Main
+//-----------------------------------------------------------------------------
+
+int main(void)
+{
+    // Initialize hardware
+    initHw();
+    initLCR();
+    initDisp();
+    initButtons();
+
+
+
+    writeDisplay("   LCR TESTER   ");
+
+    // Endless loop
+    while(true)
+    {
+        uint8_t buttonNum = getButtonPressed();
+        if (buttonNum != 255)
+        {
+            switch (buttonNum)
+            {
+            case 0:
+            case 1:
+                writeDisplay("   LCR TESTER   \n DUT1 & DUT2:  XX ");
+                break;
+            case 1:
+                writeDisplay("   LCR TESTER   \n DUT1: 3.1-3.2V ");
+                break;
+            case 2:
+                writeDisplay("   LCR TESTER   \n DUT1: 0.1-0.2V ");
+                break;
+            case 3:
+                writeDisplay("   LCR TESTER   \n DUT2: 3.0-3.2V ");
+                break;
+            case 4:
+                writeDisplay("   LCR TESTER   \n DUT2: 0.1-0.2V ");
+                break;
+            case 5:
+                writeDisplay("   LCR TESTER   \n DUT2: 0.1-0.3V ");
+                break;
+            case 6:
+                writeDisplay("   LCR TESTER   \n DUT2: 3.0-3.2V ");
+                break;
+            }
+            runTest(buttonNum);
+        }
+    }
+}

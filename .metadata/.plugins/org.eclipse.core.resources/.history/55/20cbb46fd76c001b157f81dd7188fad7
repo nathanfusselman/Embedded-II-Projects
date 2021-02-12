@@ -1,0 +1,78 @@
+// LCR Tester
+// Nathan Fusselman
+
+//-----------------------------------------------------------------------------
+// Hardware Target
+//-----------------------------------------------------------------------------
+
+// Target Platform: EK-TM4C123GXL Evaluation Board
+// Target uC:       TM4C123GH6PM
+// System Clock:    40 MHz
+
+// Hardware configuration:
+// LCR Module, PCB Model
+// Display Module, PCB Model
+
+//-----------------------------------------------------------------------------
+// Device includes, defines, and assembler directives
+//-----------------------------------------------------------------------------
+
+#include <stdint.h>
+#include <stdbool.h>
+#include "tm4c123gh6pm.h"
+#include "clock.h"
+#include "gpio.h"
+#include "lcr.h"
+#include "display.h"
+#include "buttons.h"
+
+//-----------------------------------------------------------------------------
+// Subroutines
+//-----------------------------------------------------------------------------
+
+// Initialize Hardware
+void initHw()
+{
+    // Initialize system clock to 40 MHz
+    initSystemClockTo40Mhz();
+}
+
+//-----------------------------------------------------------------------------
+// Main
+//-----------------------------------------------------------------------------
+
+int main(void)
+{
+    // Initialize hardware
+    initHw();
+    initLCR();
+    initDisp();
+    initButtons();
+
+
+
+    writeDisplay("   LCR TESTER   ");
+
+    // Endless loop
+    while(true)
+    {
+        uint8_t buttonNum = getButtonPressed();
+        switch (buttonNum)
+        {
+        case 1:
+            writeDisplay("   LCR TESTER   \n DUT1: 3.1-3.2V ");
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+        }
+        runTest(uint8_t test)
+    }
+}
