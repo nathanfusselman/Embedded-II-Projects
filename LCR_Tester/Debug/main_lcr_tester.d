@@ -13,6 +13,7 @@ main_lcr_tester.obj: /Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2
 main_lcr_tester.obj: /Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/sys/_stdint.h
 main_lcr_tester.obj: /Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/stdbool.h
 main_lcr_tester.obj: /Users/nathanfusselman/Documents/School/Spring_2021/CSE\ 5342/Labs_Projects/Libraries/tm4c123gh6pm.h
+main_lcr_tester.obj: ../main_lcr_tester.h
 main_lcr_tester.obj: /Users/nathanfusselman/Documents/School/Spring_2021/CSE\ 5342/Labs_Projects/Libraries/clock.h
 main_lcr_tester.obj: /Users/nathanfusselman/Documents/School/Spring_2021/CSE\ 5342/Labs_Projects/Libraries/gpio.h
 main_lcr_tester.obj: /Users/nathanfusselman/Documents/School/Spring_2021/CSE\ 5342/Labs_Projects/Libraries/lcr.h
@@ -32,6 +33,7 @@ main_lcr_tester.obj: /Users/nathanfusselman/Documents/School/Spring_2021/CSE\ 53
 /Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/sys/_stdint.h: 
 /Applications/ti/ccs1020/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include/stdbool.h: 
 /Users/nathanfusselman/Documents/School/Spring_2021/CSE\ 5342/Labs_Projects/Libraries/tm4c123gh6pm.h: 
+../main_lcr_tester.h: 
 /Users/nathanfusselman/Documents/School/Spring_2021/CSE\ 5342/Labs_Projects/Libraries/clock.h: 
 /Users/nathanfusselman/Documents/School/Spring_2021/CSE\ 5342/Labs_Projects/Libraries/gpio.h: 
 /Users/nathanfusselman/Documents/School/Spring_2021/CSE\ 5342/Labs_Projects/Libraries/lcr.h: 

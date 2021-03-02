@@ -88,6 +88,13 @@ void initDisp()
     waitBusy();
 }
 
+void clearDisplay()
+{
+    sendData(0, 0, 0x01);
+    sendData(0, 0, 0x07);
+    waitMicrosecond(5 * 1000);
+}
+
 void sendData(bool rs, bool rw, uint8_t data)
 {
     setPinValue(RS, rs);
@@ -120,9 +127,7 @@ uint8_t readData(bool rs)
 
 void writeDisplay(char * data)
 {
-    sendData(0, 0, 0x01);
-    sendData(0, 0, 0x07);
-    waitMicrosecond(5 * 1000);
+    clearDisplay();
     uint8_t i = 0;
     uint8_t l = 0;
     while (data[i] != '\0')
@@ -140,28 +145,72 @@ void writeDisplay(char * data)
             i++;
             switch (data[i])
             {
-            case '@':
+            case '0':
                 sendData(1, 0, 0);
                 break;
-            case 'A':
+            case '1':
                 sendData(1, 0, 1);
                 break;
-            case 'B':
+            case '2':
                 sendData(1, 0, 2);
                 break;
-            case 'C':
+            case '3':
                 sendData(1, 0, 3);
                 break;
-            case 'D':
+            case '4':
                 sendData(1, 0, 4);
                 break;
-            case 'E':
+            case '5':
                 sendData(1, 0, 5);
                 break;
-            case 'F':
+            case '6':
                 sendData(1, 0, 6);
                 break;
-            case 'G':
+            case '7':
+                sendData(1, 0, 7);
+                break;
+            }
+        }
+        i++;
+        waitBusy();
+    }
+}
+
+void writeDisplayLine(uint8_t line, char * data)
+{
+    uint8_t i = 0;
+    setCursour(0, line);
+    while (data[i] != '\0')
+    {
+        if (data[i] != '^')
+            sendData(1, 0, data[i]);
+        else
+        {
+            i++;
+            switch (data[i])
+            {
+            case '0':
+                sendData(1, 0, 0);
+                break;
+            case '1':
+                sendData(1, 0, 1);
+                break;
+            case '2':
+                sendData(1, 0, 2);
+                break;
+            case '3':
+                sendData(1, 0, 3);
+                break;
+            case '4':
+                sendData(1, 0, 4);
+                break;
+            case '5':
+                sendData(1, 0, 5);
+                break;
+            case '6':
+                sendData(1, 0, 6);
+                break;
+            case '7':
                 sendData(1, 0, 7);
                 break;
             }
@@ -193,13 +242,47 @@ void waitBusy()
     while (readData(0) > 0x80);
 }
 
+void testDisplay()
+{
+    uint8_t r = 0;
+    while (r < 4)
+    {
+        uint8_t i;
+        clearDisplay();
+        setCursour(0,0);
+        for (i = 0 + (r * 32); i < 16 + (r * 32); i++) {
+            sendData(1,0,i);
+        }
+        setCursour(0,1);
+        for (i = 16 + (r * 32); i < 32 + (r * 32); i++) {
+            sendData(1,0,i);
+        }
+        r++;
+        waitMicrosecond(500000);
+    }
+    clearDisplay();
+}
+
 void setCharacter(uint8_t n, uint8_t c[])
 {
+    if (n == 0)
+        {
+            uint8_t i = 0;
+            sendData(0, 0, 0x80 + n);
+            for (i = 0; i < 8; i++)
+            {
+                sendData(0, 0, 0x41 + (n * 8) + i);
+                sendData(1, 0, c[i]);
+            }
+        }
     if (n < 8)
     {
-        sendData(0, 0, 0x40 + (n * 10));
         uint8_t i = 0;
-        for (i = 0; i < 10; i++)
+        sendData(0, 0, 0x80 + n);
+        for (i = 0; i < 8; i++)
+        {
+            sendData(0, 0, 0x40 + (n * 8) + i);
             sendData(1, 0, c[i]);
+        }
     }
 }

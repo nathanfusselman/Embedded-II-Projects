@@ -1,5 +1,5 @@
 // GPIO Library
-// Jason Losh
+// Jason Losh & Nathan Fusselman (Modifications)
 
 //-----------------------------------------------------------------------------
 // Hardware Target
@@ -285,6 +285,27 @@ void enablePinInterrupt(PORT port, uint8_t pin)
     uint32_t* p;
     p = (uint32_t*)port + pin + OFS_DATA_TO_IM;
     *p = 1;
+    clearPinInterrupt(port, pin);
+    switch(port)
+    {
+        case PORTA:
+            NVIC_EN0_R |= 1 << (INT_GPIOA-16);
+            break;
+        case PORTB:
+            NVIC_EN0_R |= 1 << (INT_GPIOB-16);
+            break;
+        case PORTC:
+            NVIC_EN0_R |= 1 << (INT_GPIOC-16);
+            break;
+        case PORTD:
+            NVIC_EN0_R |= 1 << (INT_GPIOD-16);
+            break;
+        case PORTE:
+            NVIC_EN0_R |= 1 << (INT_GPIOE-16);
+            break;
+        case PORTF:
+            NVIC_EN0_R |= 1 << (INT_GPIOF-16);
+    }
 }
 
 void disablePinInterrupt(PORT port, uint8_t pin)
@@ -292,6 +313,33 @@ void disablePinInterrupt(PORT port, uint8_t pin)
     uint32_t* p;
     p = (uint32_t*)port + pin + OFS_DATA_TO_IM;
     *p = 0;
+    clearPinInterrupt(port, pin);
+}
+
+//This does not work for some reason. (It may be too slow for inturupts)
+void clearPinInterrupt(PORT port, uint8_t pin)
+{
+    uint8_t mask[] = {1,2,4,8,16,32,64,128};
+    switch(port)
+        {
+        case PORTA:
+            GPIO_PORTA_ICR_R |= mask[pin];
+            break;
+        case PORTB:
+            GPIO_PORTB_ICR_R |= mask[pin];
+            break;
+        case PORTC:
+            GPIO_PORTC_ICR_R |= mask[pin];
+            break;
+        case PORTD:
+            GPIO_PORTD_ICR_R |= mask[pin];
+            break;
+        case PORTE:
+            GPIO_PORTE_ICR_R |= mask[pin];
+            break;
+        case PORTF:
+            GPIO_PORTF_ICR_R |= mask[pin];
+    }
 }
 
 void setPinValue(PORT port, uint8_t pin, bool value)

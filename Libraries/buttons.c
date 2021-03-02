@@ -18,6 +18,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "main.h"
 #include "gpio.h"
 #include "wait.h"
 #include "buttons.h"
@@ -54,6 +55,12 @@ void initButtons()
     selectPinDigitalInput(Button4);
     selectPinDigitalInput(Button5);
     selectPinDigitalInput(Button6);
+    enablePinPulldown(Button1);
+    enablePinPulldown(Button2);
+    enablePinPulldown(Button3);
+    enablePinPulldown(Button4);
+    enablePinPulldown(Button5);
+    enablePinPulldown(Button6);
 
     // Configure Port F Input pins
     selectPinDigitalInput(Button0);
@@ -198,6 +205,14 @@ uint8_t getButtonPressed()
             return 255; // Multiple buttons pressed
         num = 7;
     }
-    waitMicrosecond(100000);
     return num;
+}
+
+void buttonPressed()
+{
+    GPIO_PORTE_ICR_R |= 0xFF;
+    GPIO_PORTF_ICR_R |= 0xFF;
+    uint8_t buttonNum = getButtonPressed();
+    waitMicrosecond(100000);
+    handleButtonPressed(buttonNum);
 }

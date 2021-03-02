@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=macosx
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:Display,org.eclipse.launchbar.core.descriptorType.default\:LCR,org.eclipse.launchbar.core.descriptorType.default\:Buttons,org.eclipse.launchbar.core.descriptorType.default\:LCR_Tester
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Buttons,org.eclipse.launchbar.core.descriptorType.default\:Display,org.eclipse.launchbar.core.descriptorType.default\:Ethernet_Example,org.eclipse.launchbar.core.descriptorType.default\:LCR,org.eclipse.launchbar.core.descriptorType.default\:LCR_Tester,org.eclipse.launchbar.core.descriptorType.default\:Term_Project_LCR
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:Buttons/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Buttons/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
