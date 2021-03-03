@@ -1,4 +1,4 @@
-// ADC Library
+// Analog Library
 // Nathan Fusselman
 
 //-----------------------------------------------------------------------------
@@ -19,7 +19,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "tm4c123gh6pm.h"
-#include "adc.h"
+#include "analog.h"
 
 //-----------------------------------------------------------------------------
 // Subroutines
@@ -208,4 +208,67 @@ int16_t readADCSS(uint8_t ADC, uint8_t SS)
         break;
     }
     return 0;
+}
+
+void initAC(uint8_t AC, bool EN, bool RNG, uint8_t VREF, uint8_t ISEN)
+{
+    if (!(AC < 2))
+        return;
+
+    SYSCTL_RCGCACMP_R |= (1 << AC);
+    _delay_cycles(16);
+
+    COMP_ACREFCTL_R = (EN << 9) | (RNG << 8) | VREF;
+
+    switch (AC)
+    {
+    case 0:
+        COMP_ACCTL0_R = (2 << 9) | (ISEN << 2);
+        break;
+    case 1:
+        COMP_ACCTL1_R = (2 << 9) | (ISEN << 2);
+        break;
+    }
+
+    waitMicrosecond(10);
+}
+
+void enableACInterrupt(uint8_t AC)
+{
+    if (!(AC < 2))
+        return;
+
+    COMP_ACINTEN_R |= (1 << AC);
+    clearACInterrupt(AC);
+    switch (AC)
+    {
+    case 0:
+        NVIC_EN0_R |= 1 << (INT_COMP0-16);
+        break;
+    case 1:
+        NVIC_EN0_R |= 1 << (INT_COMP1-16);
+        break;
+    }
+}
+
+void clearACInterrupt(uint8_t AC)
+{
+    COMP_ACMIS_R = (1 << AC);
+}
+
+bool getAC(uint8_t AC, bool flip)
+{
+    if (!(AC < 2))
+        return false;
+
+    switch (AC)
+    {
+    case 0:
+        return (COMP_ACSTAT0_R & 0x2) ^ flip;
+        break;
+    case 1:
+        return (COMP_ACSTAT1_R & 0x2) ^ flip;
+        break;
+    }
+    return false;
 }

@@ -26,14 +26,14 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>adc.c</name>
+			<name>analog.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Libraries/adc.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Libraries/analog.c</locationURI>
 		</link>
 		<link>
-			<name>adc.h</name>
+			<name>analog.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Libraries/adc.h</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/Libraries/analog.h</locationURI>
 		</link>
 		<link>
 			<name>buttons.c</name>
@@ -84,6 +84,16 @@
 			<name>lcr.h</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Libraries/lcr.h</locationURI>
+		</link>
+		<link>
+			<name>timers.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Libraries/timers.c</locationURI>
+		</link>
+		<link>
+			<name>timers.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Libraries/timers.h</locationURI>
 		</link>
 		<link>
 			<name>tm4c123gh6pm.h</name>

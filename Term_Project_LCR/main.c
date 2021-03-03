@@ -176,7 +176,6 @@ void printResult(RESULT result)
 //-----------------------------------------------------------------------------
 
 int main(void)
-
 {
     // Initialize hardware
     initHw();

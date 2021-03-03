@@ -319,26 +319,25 @@ void disablePinInterrupt(PORT port, uint8_t pin)
 //This does not work for some reason. (It may be too slow for inturupts)
 void clearPinInterrupt(PORT port, uint8_t pin)
 {
-    uint8_t mask[] = {1,2,4,8,16,32,64,128};
     switch(port)
         {
         case PORTA:
-            GPIO_PORTA_ICR_R |= mask[pin];
+            GPIO_PORTA_ICR_R |= (1 << pin);
             break;
         case PORTB:
-            GPIO_PORTB_ICR_R |= mask[pin];
+            GPIO_PORTB_ICR_R |= (1 << pin);
             break;
         case PORTC:
-            GPIO_PORTC_ICR_R |= mask[pin];
+            GPIO_PORTC_ICR_R |= (1 << pin);
             break;
         case PORTD:
-            GPIO_PORTD_ICR_R |= mask[pin];
+            GPIO_PORTD_ICR_R |= (1 << pin);
             break;
         case PORTE:
-            GPIO_PORTE_ICR_R |= mask[pin];
+            GPIO_PORTE_ICR_R |= (1 << pin);
             break;
         case PORTF:
-            GPIO_PORTF_ICR_R |= mask[pin];
+            GPIO_PORTF_ICR_R |= (1 << pin);
     }
 }
 

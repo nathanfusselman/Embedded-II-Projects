@@ -21,15 +21,25 @@
 #include "gpio.h"
 #include "wait.h"
 #include "lcr.h"
-#include "adc.h"
+#include "analog.h"
 #include "tm4c123gh6pm.h"
+
+#define HIGH_LEVEL 3.3      // High Voltage
+#define LOW_LEVEL 0         // Low Voltage
+#define ADC_RES 4096.0        // Resolution of the ADC module
+#define R3 33               // R3 Resistor value
 
 #define MEAS_LR PORTA,2
 #define MEAS_C PORTA,3
 #define HIGHSIDE_R PORTA,4
 #define LOWSIDE_R PORTA,5
 #define INTEGRATE PORTA,6
-#define SENSE PORTD,2
+#define SENSE_ADC PORTD,2
+#define SENSE_AC PORTC,7
+
+#define SENSE_ADC_AIN 5
+#define SENSE_ADC_HS 4
+#define SENSE_ADC_D 0x100
 
 //-----------------------------------------------------------------------------
 // Global variables
@@ -44,6 +54,7 @@ void initLCR()
 {
     // Enable clocks
     enablePort(PORTA);
+    enablePort(PORTC);
     enablePort(PORTD);
 
     // Configure Control pins
@@ -54,10 +65,11 @@ void initLCR()
     selectPinPushPullOutput(INTEGRATE);
 
     // Configure Input pins
-    selectPinAnalogInput(SENSE);
+    selectPinAnalogInput(SENSE_ADC);
+    selectPinAnalogInput(SENSE_AC);
     initADC(0,0);
-    setADCSSLog2AverageCount(0,0,2,0x40);
-    setADCSSMux(0,0,3);
+    setADCSSLog2AverageCount(0,0,SENSE_ADC_HS,SENSE_ADC_D);
+    setADCSSMux(0,0,SENSE_ADC_AIN);
 
     // Setting Pins to 0
     setOff();
@@ -121,10 +133,9 @@ float testResistanceLowRes()
     setOff();
     setPinValue(MEAS_LR, 1);
     setPinValue(LOWSIDE_R, 1);
+    float value = testVoltage();
     setOff();
-    uint16_t raw = readADCSS(0,0);
-    float value = ((raw / 4096.0) * 3.3);
-    return ((((3.3 * 33) - (value * 33))) / value);
+    return ((R3 * (HIGH_LEVEL - value)) / value);
 }
 
 float testResistanceHighRes()
@@ -135,7 +146,7 @@ float testResistanceHighRes()
     setPinValue(LOWSIDE_R, 1);
     setPinValue(MEAS_LR, 0);
 
-    waitMicrosecond(100);
+    waitMicrosecond(10000000);
 
     setPinValue(LOWSIDE_R, 0);
     setPinValue(MEAS_LR, 1);
@@ -146,12 +157,8 @@ float testResistanceHighRes()
 
 float testVoltage()
 {
-    setOff();
-    setPinValue(MEAS_LR, 1);
-    setPinValue(LOWSIDE_R, 1);
-    setOff();
     uint16_t raw = readADCSS(0,0);
-    return ((raw / 4096.0) * 3.3);
+    return (raw / (ADC_RES / HIGH_LEVEL));
 }
 
 void setOff()
