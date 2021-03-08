@@ -22,10 +22,31 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+// Enum values set to bitband address of bit 0 of the XTIMERX_CFG_R register
+typedef enum _TIMER
+{
+    TIMER_0 = 0x40030000,
+    TIMER_1 = 0x40031000,
+    TIMER_2 = 0x40032000,
+    TIMER_3 = 0x40033000,
+    TIMER_4 = 0x40034000,
+    TIMER_5 = 0x40035000,
+    WTIMER_0 = 0x40036000,
+    WTIMER_1 = 0x40037000,
+    WTIMER_2 = 0x40038000,
+    WTIMER_3 = 0x40039000,
+    WTIMER_4 = 0x4003A000,
+    WTIMER_5 = 0x4003B000
+} TIMER;
+
 //-----------------------------------------------------------------------------
 // Subroutines
 //-----------------------------------------------------------------------------
 
-void initTimer(uint8_t T, bool wide, bool ab, bool sb);
+void initTimer(TIMER timer);
+void resetTimer(TIMER timer);
+void enableTimer(TIMER timer);
+void disableTimer(TIMER timer);
+uint64_t getTimerValue(TIMER timer);
 
 #endif

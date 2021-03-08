@@ -46,5 +46,6 @@ void reverse(char* str, int len);
 int intToStr(int x, char str[], int d);
 void ftoa(float n, char* res, int afterpoint);
 int power(uint8_t b, uint8_t e);
+void AC0Trigger();
 
 #endif

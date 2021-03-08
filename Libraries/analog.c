@@ -20,6 +20,7 @@
 #include <stdbool.h>
 #include "tm4c123gh6pm.h"
 #include "analog.h"
+#include "wait.h"
 
 //-----------------------------------------------------------------------------
 // Subroutines
@@ -265,10 +266,8 @@ bool getAC(uint8_t AC, bool flip)
     {
     case 0:
         return (COMP_ACSTAT0_R & 0x2) ^ flip;
-        break;
     case 1:
         return (COMP_ACSTAT1_R & 0x2) ^ flip;
-        break;
     }
     return false;
 }
