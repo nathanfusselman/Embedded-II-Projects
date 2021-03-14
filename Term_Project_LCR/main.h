@@ -26,11 +26,15 @@
 #include "main.h"
 #include "clock.h"
 #include "gpio.h"
+#include "wait.h"
+#include "uart0.h"
 #include "lcr.h"
 #include "display.h"
 #include "buttons.h"
 
 typedef enum mode {Norm,Test} MODE;
+
+typedef enum status {STOPPED,TESTING} STATUS;
 
 //-----------------------------------------------------------------------------
 // Subroutines
@@ -40,6 +44,7 @@ void initHw(void);
 void handleButtonPressed(uint8_t buttonNum);
 void toHomePage();
 void toTestPage();
-void printResult(RESULT result);
+uint8_t printWaiting(uint8_t num);
+void handleMeasure(TYPE test);
 
 #endif

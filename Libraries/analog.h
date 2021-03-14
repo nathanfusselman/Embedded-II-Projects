@@ -31,9 +31,10 @@ void setADCSSLog2AverageCount(uint8_t ADC, uint8_t SS, uint8_t log2AverageCount,
 void setADCSSMux(uint8_t ADC, uint8_t SS, uint8_t input);
 int16_t readADCSS(uint8_t ADC, uint8_t SS);
 
-void initAC(uint8_t AC, bool EN, bool RNG, uint8_t VREF, uint8_t ISEN);
+void initAC(uint8_t AC, bool EN, bool RNG, uint8_t VREF, uint8_t ISEN, bool INVERT);
 void enableACInterrupt(uint8_t AC);
+void disableACInterrupt(uint8_t AC);
 void clearACInterrupt(uint8_t AC);
-bool getAC(uint8_t AC, bool flip);
+bool getAC(uint8_t AC);
 
 #endif

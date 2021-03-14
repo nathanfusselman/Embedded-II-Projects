@@ -25,6 +25,8 @@
 
 typedef enum type {Voltage,Resistance,Capacitance,Inductance,ESR,AUTO} TYPE;
 
+typedef enum state {IDLE,TESTING_R,CANCELED} STATE;
+
 typedef struct result {
     TYPE type;
     float value;
@@ -37,10 +39,12 @@ typedef struct result {
 
 void initLCR(void);
 void runTest(uint8_t test);
-RESULT runMeasure(TYPE type);
+RESULT runMeasure(TYPE type, bool first);
 float testResistanceLowRes(void);
-float testResistanceHighRes(void);
+void onAC0(void);
+float testResistanceHighRes(bool first);
 float testVoltage(void);
+void cancelTest(void);
 void setOff(void);
 void reverse(char* str, int len);
 int intToStr(int x, char str[], int d);

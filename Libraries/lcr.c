@@ -22,7 +22,9 @@
 #include "wait.h"
 #include "lcr.h"
 #include "analog.h"
-#include "Timers.h"
+#include "timers.h"
+#include "uart0.h"
+#include "main.h"
 #include "tm4c123gh6pm.h"
 
 #define HIGH_LEVEL 3.3      // High Voltage
@@ -30,7 +32,9 @@
 #define ADC_RES 4096.0      // Resolution of the ADC module
 #define R3 33               // R3 Resistor value
 
-#define RESISTANCE_TIMEOUT 6000000 // Timeout at 5M Ohm
+#define RESISTANCE_OFFSET -8      // 0Ohm Timer offset
+#define RESISTANCE_MULT 0.0188
+#define RESISTANCE_TIMER WTIMER_0
 
 #define MEAS_LR PORTA,2
 #define MEAS_C PORTA,3
@@ -47,6 +51,8 @@
 //-----------------------------------------------------------------------------
 // Global variables
 //-----------------------------------------------------------------------------
+
+STATE volatile currentState = IDLE;
 
 //-----------------------------------------------------------------------------
 // Subroutines
@@ -73,13 +79,15 @@ void initLCR()
     initADC(0,0);
     setADCSSLog2AverageCount(0,0,SENSE_ADC_HS,SENSE_ADC_D);
     setADCSSMux(0,0,SENSE_ADC_AIN);
-    initAC(0, true, false, 0xF, 0x02);
+    initAC(0, true, false, 0xF, 0x02, true);
 
     // Setup Timer
-    initTimer(WTIMER_0);
+    initTimer(RESISTANCE_TIMER);
 
     // Setting Pins to 0
     setOff();
+
+    currentState = IDLE;
 }
 
 void runTest(uint8_t test)
@@ -114,7 +122,7 @@ void runTest(uint8_t test)
     }
 }
 
-RESULT runMeasure(TYPE type)
+RESULT runMeasure(TYPE type, bool first)
 {
     RESULT result;
     setOff();
@@ -125,7 +133,7 @@ RESULT runMeasure(TYPE type)
         result.value = testVoltage();
         break;
     case Resistance:
-        result.value = testResistanceHighRes();
+        result.value = testResistanceHighRes(first);
         break;
     default:
         result.value = 99.99999;
@@ -146,15 +154,26 @@ float testResistanceLowRes()
 
     float value = testVoltage();
 
+    if (currentState == CANCELED)
+        return -1;
+
     setOff();
 
     return ((R3 * (HIGH_LEVEL - value)) / value);
 }
 
-float testResistanceHighRes()
+void onAC0()
+{
+    disableTimer(RESISTANCE_TIMER);
+    currentState = IDLE;
+    clearACInterrupt(0);
+}
+
+float testResistanceHighRes(bool first)
 {
     float value = 0;
-    uint32_t count = 0;
+
+    uint8_t count = 0;
 
     setOff();
 
@@ -165,21 +184,37 @@ float testResistanceHighRes()
 
     waitMicrosecond(100000);
 
-    disableTimer(WTIMER_0);
+    enableACInterrupt(0);
 
-    resetTimer(WTIMER_0);
+    currentState = TESTING_R;
 
-    enableTimer(WTIMER_0);
+    disableTimer(RESISTANCE_TIMER);
+
+    resetTimer(RESISTANCE_TIMER);
 
     setPinValue(LOWSIDE_R, 0);
     setPinValue(MEAS_LR, 1);
 
-    while (getAC(0, false) && count < RESISTANCE_TIMEOUT)
-        count++;
+    enableTimer(RESISTANCE_TIMER);
 
-    disableTimer(WTIMER_0);
+    while (currentState == TESTING_R)
+    {
+        if (first)
+        {
+            count = printWaiting(count);
+            waitMicrosecond(1000000);
+        }
+    }
 
-    value = (getTimerValue(WTIMER_0) / 40.0) / 1.4;
+    value = ((RESISTANCE_MULT * ((float) getTimerValue(RESISTANCE_TIMER))) + RESISTANCE_OFFSET);
+
+    if (value < 0)
+        value = 0;
+
+    disableACInterrupt(0);
+
+    if (currentState == CANCELED)
+            return -1;
 
     setOff();
 
@@ -194,13 +229,28 @@ float testVoltage()
 
     uint16_t raw = readADCSS(0,0);
 
+    if (currentState == CANCELED)
+        return -1;
+
     setOff();
 
     return (raw / (ADC_RES / HIGH_LEVEL));
 }
 
+void cancelTest()
+{
+    currentState = CANCELED;
+    // Setting Pins to 0
+    setPinValue(MEAS_LR, 0);
+    setPinValue(MEAS_C, 0);
+    setPinValue(HIGHSIDE_R, 0);
+    setPinValue(LOWSIDE_R, 0);
+    setPinValue(INTEGRATE, 0);
+}
+
 void setOff()
 {
+    currentState = IDLE;
     // Setting Pins to 0
     setPinValue(MEAS_LR, 0);
     setPinValue(MEAS_C, 0);

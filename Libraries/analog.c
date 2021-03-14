@@ -211,7 +211,7 @@ int16_t readADCSS(uint8_t ADC, uint8_t SS)
     return 0;
 }
 
-void initAC(uint8_t AC, bool EN, bool RNG, uint8_t VREF, uint8_t ISEN)
+void initAC(uint8_t AC, bool EN, bool RNG, uint8_t VREF, uint8_t ISEN, bool INVERT)
 {
     if (!(AC < 2))
         return;
@@ -224,10 +224,10 @@ void initAC(uint8_t AC, bool EN, bool RNG, uint8_t VREF, uint8_t ISEN)
     switch (AC)
     {
     case 0:
-        COMP_ACCTL0_R = (2 << 9) | (ISEN << 2);
+        COMP_ACCTL0_R = (2 << 9) | (ISEN << 2) | (INVERT << 1);
         break;
     case 1:
-        COMP_ACCTL1_R = (2 << 9) | (ISEN << 2);
+        COMP_ACCTL1_R = (2 << 9) | (ISEN << 2) | (INVERT << 1);
         break;
     }
 
@@ -252,12 +252,30 @@ void enableACInterrupt(uint8_t AC)
     }
 }
 
+void disableACInterrupt(uint8_t AC)
+{
+    if (!(AC < 2))
+        return;
+
+    COMP_ACINTEN_R &= ~(1 << AC);
+    clearACInterrupt(AC);
+    switch (AC)
+    {
+    case 0:
+        NVIC_EN0_R &= ~(1 << (INT_COMP0-16));
+        break;
+    case 1:
+        NVIC_EN0_R &= ~(1 << (INT_COMP1-16));
+        break;
+    }
+}
+
 void clearACInterrupt(uint8_t AC)
 {
     COMP_ACMIS_R = (1 << AC);
 }
 
-bool getAC(uint8_t AC, bool flip)
+bool getAC(uint8_t AC)
 {
     if (!(AC < 2))
         return false;
@@ -265,9 +283,9 @@ bool getAC(uint8_t AC, bool flip)
     switch (AC)
     {
     case 0:
-        return (COMP_ACSTAT0_R & 0x2) ^ flip;
+        return (COMP_ACSTAT0_R & 0x2);
     case 1:
-        return (COMP_ACSTAT1_R & 0x2) ^ flip;
+        return (COMP_ACSTAT1_R & 0x2);
     }
     return false;
 }

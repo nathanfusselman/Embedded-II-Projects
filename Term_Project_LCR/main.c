@@ -23,7 +23,9 @@
 #include "tm4c123gh6pm.h"
 #include "main.h"
 #include "clock.h"
+#include "wait.h"
 #include "gpio.h"
+#include "uart0.h"
 #include "lcr.h"
 #include "display.h"
 #include "buttons.h"
@@ -33,6 +35,8 @@
 //-----------------------------------------------------------------------------
 
 MODE currentMode;
+
+STATUS currentStatus = STOPPED;
 
 //-----------------------------------------------------------------------------
 // Subroutines
@@ -53,27 +57,29 @@ void handleButtonPressed(uint8_t buttonNum)
             switch (buttonNum)
             {
             case 0:
+                cancelTest();
                 toHomePage();
                 break;
             case 1:
-                printResult(runMeasure(Voltage));
+                handleMeasure(Voltage);
                 break;
             case 2:
-                printResult(runMeasure(Resistance));
+                handleMeasure(Resistance);
                 break;
             case 3:
-                printResult(runMeasure(Capacitance));
+                handleMeasure(Capacitance);
                 break;
             case 4:
-                printResult(runMeasure(Inductance));
+                handleMeasure(Inductance);
                 break;
             case 5:
-                printResult(runMeasure(ESR));
+                handleMeasure(ESR);
                 break;
             case 6:
-                printResult(runMeasure(AUTO));
+                handleMeasure(AUTO);
                 break;
             case 7:
+                cancelTest();
                 toTestPage();
                 break;
             }
@@ -113,62 +119,117 @@ void handleButtonPressed(uint8_t buttonNum)
 
 void toHomePage()
 {
+    currentStatus = STOPPED;
     currentMode = Norm;
     writeDisplay("  LCR PROJECT!   \n    WELCOME!    ");
 }
 
 void toTestPage()
 {
+    currentStatus = STOPPED;
     currentMode = Test;
     testDisplay();
     writeDisplay("   LCR TESTER   \nDUT1, DUT2: XXXX");
     runTest(7);
 }
 
-void printResult(RESULT result)
+uint8_t printWaiting(uint8_t num)
 {
+    switch (num)
+    {
+    case 0:
+        writeDisplayLine(1, "   WAITING      ");
+        return 1;
+    case 1:
+        writeDisplayLine(1, "   WAITING.     ");
+        return 2;
+    case 2:
+        writeDisplayLine(1, "   WAITING..    ");
+        return 3;
+    case 3:
+        writeDisplayLine(1, "   WAITING...   ");
+        return 0;
+    }
+    return 0;
+}
+
+void handleMeasure(TYPE test)
+{
+    currentStatus = TESTING;
     clearDisplay();
 
     uint8_t i;
 
+    bool first = true;
+
     char * suffix = " _ ";
 
-    char fullString[] = "                ";
+    char fullString[] = "                 ";
 
-    switch (result.type)
+    switch (test)
     {
     case Voltage:
         writeDisplayLine(0, "    VOLTAGE     ");
-        suffix = " V ";
         break;
     case Resistance:
         writeDisplayLine(0, "   RESISTANCE   ");
-        suffix = " ^0";
         break;
     case Capacitance:
         writeDisplayLine(0, "  CAPACITANCE    ");
-        suffix = " F ";
         break;
     case Inductance:
         writeDisplayLine(0, "   INDUCTANCE   ");
-        suffix = " H ";
         break;
     case ESR:
         writeDisplayLine(0, "      ESR       ");
-        suffix = " ^0";
         break;
     case AUTO:
         writeDisplayLine(0, "      AUTO      ");
-        suffix = " _ ";
         break;
     }
 
-    for (i = 0; i < 8; i++)
-        fullString[i + 3] = result.valueString[i];
-    for (i = 0; i < 3; i++)
-        fullString[i + 11] = suffix[i];
+    while (true)
+    {
+        RESULT result = runMeasure(test, first);
 
-    writeDisplayLine(1, fullString);
+        first = false;
+
+        if (currentStatus == STOPPED)
+            return;
+
+        if (result.value == -1)
+            return;
+
+        switch (result.type)
+        {
+        case Voltage:
+            suffix = " V ";
+            break;
+        case Resistance:
+            suffix = " ^0";
+            break;
+        case Capacitance:
+            suffix = " F ";
+            break;
+        case Inductance:
+            suffix = " H ";
+            break;
+        case ESR:
+            suffix = " ^0";
+            break;
+        }
+
+        if (result.valueString[7] == '.') // Removes Trailing '.'
+            result.valueString[7] = ' ';
+
+        for (i = 0; i < 8; i++)
+            fullString[i + 3] = result.valueString[i];
+        for (i = 0; i < 3; i++)
+            fullString[i + 11] = suffix[i];
+
+        writeDisplayLine(1, fullString);
+        waitMicrosecond(1000000);
+    }
 }
 
 //-----------------------------------------------------------------------------
@@ -178,10 +239,13 @@ void printResult(RESULT result)
 int main(void)
 {
     // Initialize hardware
+
     initHw();
     initLCR();
     initDisp();
     initButtons();
+    initUart0();
+    setUart0BaudRate(115200, 40e6);
 
     uint8_t ohm[] = {0,14,17,17,17,10,27,0};
 
@@ -190,6 +254,8 @@ int main(void)
     enableAllListen();
 
     toHomePage();
+
+    //handleButtonPressed(2);
 
     // Endless loop
     while(true);

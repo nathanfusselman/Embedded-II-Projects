@@ -64,6 +64,8 @@ void initTimer(TIMER timer)
     else
         SYSCTL_RCGCWTIMER_R |= (1 << (((timer & 0x0000F000) >> 12) % 6));
 
+    _delay_cycles(3);
+
     p = (uint32_t*)(timer + OFS_CFG_CTL);
     *p &= ~TIMER_CTL_TAEN;
     p = (uint32_t*)(timer + OFS_CFG_CFG);
@@ -100,6 +102,47 @@ void disableTimer(TIMER timer)
 
     p = (uint32_t*)(timer + OFS_CFG_CTL);
     *p &= ~TIMER_CTL_TAEN;
+}
+
+void enableTimerInterrupt(TIMER timer)
+{
+    uint32_t* p;
+
+    p = (uint32_t*)(timer + OFS_CFG_IMR);
+    *p = TIMER_IMR_TATOIM;
+
+    if (((timer & 0x0000F000) >> 12) < 6)
+    {
+        NVIC_EN0_R |= 1 << (INT_TIMER0A - 16 + (((timer & 0x0000F000) >> 12) % 6)*2);
+    }
+    else
+    {
+        NVIC_EN0_R |= 1 << (INT_WTIMER0A - 16 + (((timer & 0x0000F000) >> 12) % 6)*2);
+    }
+}
+
+void disableTimerInterrupt(TIMER timer)
+{
+    uint32_t* p;
+
+    p = (uint32_t*)(timer + OFS_CFG_IMR);
+    *p &= ~TIMER_IMR_TATOIM;
+
+    if (((timer & 0x0000F000) >> 12) < 6)
+    {
+        NVIC_EN0_R &= ~(1 << (INT_TIMER0A - 16 + (((timer & 0x0000F000) >> 12) % 6)*2));
+    }
+    else
+    {
+        NVIC_EN0_R &= ~(1 << (INT_WTIMER0A - 16 + (((timer & 0x0000F000) >> 12) % 6)*2));
+    }
+}
+
+void clearTimerInterrupt(TIMER timer)
+{
+    uint32_t* p;
+    p = (uint32_t*)(timer + OFS_CFG_ICR);
+    *p |= 0x1;
 }
 
 uint64_t getTimerValue(TIMER timer)

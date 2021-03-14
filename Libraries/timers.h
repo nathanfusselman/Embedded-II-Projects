@@ -47,6 +47,9 @@ void initTimer(TIMER timer);
 void resetTimer(TIMER timer);
 void enableTimer(TIMER timer);
 void disableTimer(TIMER timer);
+void enableTimerInterrupt(TIMER timer);
+void disableTimerInterrupt(TIMER timer);
+void clearTimerInterrupt(TIMER timer);
 uint64_t getTimerValue(TIMER timer);
 
 #endif

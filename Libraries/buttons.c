@@ -44,6 +44,9 @@
 // Initialize Display
 void initButtons()
 {
+
+    NVIC_PRI1_R |= NVIC_PRI1_INT4_M; // Lower priority for Port E buttons
+
     // Enable clocks
     enablePort(PORTE);
     enablePort(PORTF);
@@ -210,9 +213,34 @@ uint8_t getButtonPressed()
 
 void buttonPressed()
 {
-    GPIO_PORTE_ICR_R |= 0xFF;
-    GPIO_PORTF_ICR_R |= 0xFF;
     uint8_t buttonNum = getButtonPressed();
-    waitMicrosecond(100000);
+    waitMicrosecond(10000);
+    switch (buttonNum)
+    {
+    case 0:
+        clearPinInterrupt(Button0);
+        break;
+    case 1:
+        clearPinInterrupt(Button1);
+        break;
+    case 2:
+        clearPinInterrupt(Button2);
+        break;
+    case 3:
+        clearPinInterrupt(Button3);
+        break;
+    case 4:
+        clearPinInterrupt(Button4);
+        break;
+    case 5:
+        clearPinInterrupt(Button5);
+        break;
+    case 6:
+        clearPinInterrupt(Button6);
+        break;
+    case 7:
+        clearPinInterrupt(Button7);
+        break;
+    }
     handleButtonPressed(buttonNum);
 }

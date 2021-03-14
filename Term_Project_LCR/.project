@@ -101,6 +101,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Libraries/tm4c123gh6pm.h</locationURI>
 		</link>
 		<link>
+			<name>uart0.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Libraries/uart0.c</locationURI>
+		</link>
+		<link>
+			<name>uart0.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Libraries/uart0.h</locationURI>
+		</link>
+		<link>
 			<name>wait.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Libraries/wait.c</locationURI>

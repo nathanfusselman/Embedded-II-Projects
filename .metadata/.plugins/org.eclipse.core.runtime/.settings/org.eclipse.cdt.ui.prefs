@@ -2,7 +2,6 @@ asm_directive=255,255,255
 asm_label=216,216,216
 buildConsoleBackgroundColor=30,30,30
 buildConsoleOutputStreamColor=170,170,170
-buildConsoleWrapLines=false
 buildConsoleWrapLines_COPY=true
 c_braces=216,216,216
 c_comment_task_tag=204,223,50
