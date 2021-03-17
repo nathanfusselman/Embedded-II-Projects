@@ -224,10 +224,10 @@ void initAC(uint8_t AC, bool EN, bool RNG, uint8_t VREF, uint8_t ISEN, bool INVE
     switch (AC)
     {
     case 0:
-        COMP_ACCTL0_R = (2 << 9) | (ISEN << 2) | (INVERT << 1);
+        COMP_ACCTL0_R = (0x2 << 9) | (ISEN << 2) | (INVERT << 1);
         break;
     case 1:
-        COMP_ACCTL1_R = (2 << 9) | (ISEN << 2) | (INVERT << 1);
+        COMP_ACCTL1_R = (0x2 << 9) | (ISEN << 2) | (INVERT << 1);
         break;
     }
 
