@@ -1,6 +1,8 @@
 /.metadata/
 /RemoteSystemsTempFiles/
 /.jxbrowser-data/
+.gitattributes
+.gitignore
 .DS_Store
 RemoteSystemsTempFiles/.project
 Term_Project_LCR/.DS_Store
