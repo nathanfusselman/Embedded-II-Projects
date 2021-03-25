@@ -36,6 +36,14 @@
 #define RESISTANCE_MULT 0.0188
 #define RESISTANCE_TIMER WTIMER_0
 
+#define CAPACITANCE_MULT 0.00000018
+#define CAPACITANCE_TIMER WTIMER_0
+
+#define INDUCTANCE_DIV 1.37 //-(ln(19/75))
+#define INDUCTANCE_TIMER WTIMER_0
+
+#define DELAY 250000
+
 #define MEAS_LR PORTA,2
 #define MEAS_C PORTA,3
 #define HIGHSIDE_R PORTA,4
@@ -90,6 +98,14 @@ void initLCR()
     currentState = IDLE;
 }
 
+void onAC0()
+{
+    disableTimer(CAPACITANCE_TIMER);
+    disableTimer(RESISTANCE_TIMER);
+    currentState = IDLE;
+    clearACInterrupt(0);
+}
+
 void runTest(uint8_t test)
 {
     setOff();
@@ -130,10 +146,19 @@ RESULT runMeasure(TYPE type, bool first)
     switch (type)
     {
     case Voltage:
-        result.value = testVoltage();
+        result.value = testVoltage(first);
         break;
     case Resistance:
-        result.value = testResistanceHighRes(first);
+        result.value = testResistance(first);
+        break;
+    case Capacitance:
+        result.value = testCapacitance(first);
+        break;
+    case Inductance:
+        result.value = testInductance(first);
+        break;
+    case ESR:
+        result.value = testESR(first);
         break;
     default:
         result.value = 99.99999;
@@ -143,33 +168,29 @@ RESULT runMeasure(TYPE type, bool first)
     return result;
 }
 
-float testResistanceLowRes()
+float testESR(bool first)
 {
     setOff();
 
     setPinValue(MEAS_LR, 1);
     setPinValue(LOWSIDE_R, 1);
 
-    waitMicrosecond(1000);
+    if (first)
+        printWaiting(0);
 
-    float value = testVoltage();
+    waitMicrosecond(DELAY);
+
+    float DUT2 = getVoltage();
 
     if (currentState == CANCELED)
         return -1;
 
     setOff();
 
-    return ((R3 * (HIGH_LEVEL - value)) / value);
+    return DUT2;
 }
 
-void onAC0()
-{
-    disableTimer(RESISTANCE_TIMER);
-    currentState = IDLE;
-    clearACInterrupt(0);
-}
-
-float testResistanceHighRes(bool first)
+float testResistance(bool first)
 {
     float value = 0;
 
@@ -182,7 +203,7 @@ float testResistanceHighRes(bool first)
     setPinValue(LOWSIDE_R, 1);
     setPinValue(MEAS_LR, 0);
 
-    waitMicrosecond(100000);
+    waitMicrosecond(DELAY);
 
     enableACInterrupt(0);
 
@@ -202,7 +223,7 @@ float testResistanceHighRes(bool first)
         if (first)
         {
             count = printWaiting(count);
-            waitMicrosecond(1000000);
+            waitMicrosecond(DELAY);
         }
     }
 
@@ -221,20 +242,132 @@ float testResistanceHighRes(bool first)
     return value;
 }
 
-float testVoltage()
+float testCapacitance(bool first)
+{
+    float value = 0;
+
+    uint8_t count = 0;
+
+    setOff();
+
+    setPinValue(LOWSIDE_R, 1);
+    setPinValue(MEAS_C, 1);
+
+    waitMicrosecond(DELAY);
+
+    enableACInterrupt(0);
+
+    currentState = TESTING_C;
+
+    disableTimer(CAPACITANCE_TIMER);
+
+    resetTimer(CAPACITANCE_TIMER);
+
+    setPinValue(LOWSIDE_R, 0);
+    setPinValue(HIGHSIDE_R, 1);
+
+    enableTimer(CAPACITANCE_TIMER);
+
+    while (currentState == TESTING_C)
+    {
+        if (first)
+        {
+            count = printWaiting(count);
+            waitMicrosecond(DELAY);
+        }
+    }
+
+    value = ((float) getTimerValue(CAPACITANCE_TIMER) * CAPACITANCE_MULT);
+
+    if (value < 0)
+        value = 0;
+
+    disableACInterrupt(0);
+
+    if (currentState == CANCELED)
+            return -1;
+
+    setOff();
+
+    return value;
+}
+
+float testInductance(bool first)
+{
+    float value = 0;
+
+    uint8_t count = 0;
+
+    setOff();
+
+    setPinValue(LOWSIDE_R, 1);
+
+    waitMicrosecond(DELAY);
+
+    enableACInterrupt(0);
+
+    currentState = TESTING_L;
+
+    disableTimer(INDUCTANCE_TIMER);
+
+    resetTimer(INDUCTANCE_TIMER);
+
+    enableTimer(INDUCTANCE_TIMER);
+
+    setPinValue(MEAS_LR, 1);
+
+    while (currentState == TESTING_L)
+    {
+        if (first)
+        {
+            count = printWaiting(count);
+            waitMicrosecond(DELAY);
+        }
+    }
+
+    float ESR = testESR(false);
+
+    value = (((float) getTimerValue(INDUCTANCE_TIMER) * (R3 + ESR)) / INDUCTANCE_DIV);
+
+    if (value < 0)
+        value = 0;
+
+    disableACInterrupt(0);
+
+    if (currentState == CANCELED)
+            return -1;
+
+    setOff();
+
+    return value;
+}
+
+float testVoltage(bool first)
 {
     setOff();
 
     setPinValue(MEAS_C, 1);
 
-    uint16_t raw = readADCSS(0,0);
+    if (first)
+        printWaiting(0);
+
+    waitMicrosecond(DELAY);
+
+    float value = getVoltage();
 
     if (currentState == CANCELED)
         return -1;
 
     setOff();
 
-    return (raw / (ADC_RES / HIGH_LEVEL));
+    return value;
+}
+
+float getVoltage()
+{
+    uint16_t raw = readADCSS(0,0);
+
+    return ((float) raw / (ADC_RES / HIGH_LEVEL));
 }
 
 void cancelTest()

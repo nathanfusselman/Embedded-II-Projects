@@ -162,7 +162,7 @@ void handleMeasure(TYPE test)
 
     bool first = true;
 
-    char * suffix = " _ ";
+    char * suffix = " __ ";
 
     char fullString[] = "                 ";
 
@@ -203,19 +203,19 @@ void handleMeasure(TYPE test)
         switch (result.type)
         {
         case Voltage:
-            suffix = " V ";
+            suffix = " V  ";
             break;
         case Resistance:
-            suffix = " ^0";
+            suffix = " ^0 ";
             break;
         case Capacitance:
-            suffix = " F ";
+            suffix = " ^1F";
             break;
         case Inductance:
-            suffix = " H ";
+            suffix = " ^1H";
             break;
         case ESR:
-            suffix = " ^0";
+            suffix = " ^0 ";
             break;
         }
 
@@ -224,8 +224,13 @@ void handleMeasure(TYPE test)
 
         for (i = 0; i < 8; i++)
             fullString[i + 3] = result.valueString[i];
-        for (i = 0; i < 3; i++)
-            fullString[i + 11] = suffix[i];
+        for (i = 0; i < 4; i++)
+        {
+            if (result.type == Capacitance || result.type == Inductance)
+                fullString[i + 10] = suffix[i];
+            else
+                fullString[i + 11] = suffix[i];
+        }
 
         writeDisplayLine(1, fullString);
         waitMicrosecond(1000000);
@@ -248,8 +253,10 @@ int main(void)
     setUart0BaudRate(115200, 40e6);
 
     uint8_t ohm[] = {0,14,17,17,17,10,27,0};
+    uint8_t micro[] = {0,0,18,18,18,29,16,16};
 
     setCharacter(0, ohm);
+    setCharacter(1, micro);
 
     enableAllListen();
 
