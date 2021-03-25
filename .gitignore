@@ -2,8 +2,12 @@
 /RemoteSystemsTempFiles/
 /.jxbrowser-data/
 .gitattributes
+**/Debug/*
+**Debug/*
+.launches/*
 .gitignore
-.DS_Store
+.settings/org.eclipse.core.resources.prefs*
+.DS_Store*
 RemoteSystemsTempFiles/.project
 Term_Project_LCR/.DS_Store
 .metadata/.log
