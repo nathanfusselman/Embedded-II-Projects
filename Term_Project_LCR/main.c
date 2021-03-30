@@ -200,6 +200,13 @@ void handleMeasure(TYPE test)
         if (result.value == -1)
             return;
 
+        if (result.value == -2)
+        {
+            writeDisplayLine(1, "      HIGH      ");
+            waitMicrosecond(1000000);
+            return;
+        }
+
         switch (result.type)
         {
         case Voltage:

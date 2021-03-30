@@ -32,14 +32,20 @@
 #define ADC_RES 4096.0      // Resolution of the ADC module
 #define R3 33               // R3 Resistor value
 
+#define ESR_OFFSET 5
+#define ESR_MULT 1.2
+
 #define RESISTANCE_OFFSET -8      // 0Ohm Timer offset
 #define RESISTANCE_MULT 0.0188
+#define RESISTANCE_MIN 100
 #define RESISTANCE_TIMER WTIMER_0
 
 #define CAPACITANCE_MULT 0.00000018
 #define CAPACITANCE_TIMER WTIMER_0
 
-#define INDUCTANCE_DIV 1.37 //-(ln(19/75))
+#define INDUCTANCE_A -1.029e-7
+#define INDUCTANCE_B 0.0211
+#define INDUCTANCE_C -21.5
 #define INDUCTANCE_TIMER WTIMER_0
 
 #define DELAY 250000
@@ -102,6 +108,7 @@ void onAC0()
 {
     disableTimer(CAPACITANCE_TIMER);
     disableTimer(RESISTANCE_TIMER);
+    disableTimer(INDUCTANCE_TIMER);
     currentState = IDLE;
     clearACInterrupt(0);
 }
@@ -187,7 +194,7 @@ float testESR(bool first)
 
     setOff();
 
-    return DUT2;
+    return (((R3 * (HIGH_LEVEL - DUT2)) / DUT2) - ESR_OFFSET) * ESR_MULT;
 }
 
 float testResistance(bool first)
@@ -300,6 +307,13 @@ float testInductance(bool first)
 
     setOff();
 
+    float ESR = testESR(false);
+
+    if (ESR > 6)
+        return -2;
+
+    setOff();
+
     setPinValue(LOWSIDE_R, 1);
 
     waitMicrosecond(DELAY);
@@ -312,9 +326,9 @@ float testInductance(bool first)
 
     resetTimer(INDUCTANCE_TIMER);
 
-    enableTimer(INDUCTANCE_TIMER);
-
     setPinValue(MEAS_LR, 1);
+
+    enableTimer(INDUCTANCE_TIMER);
 
     while (currentState == TESTING_L)
     {
@@ -325,9 +339,9 @@ float testInductance(bool first)
         }
     }
 
-    float ESR = testESR(false);
+    float x = ((float) getTimerValue(INDUCTANCE_TIMER) * (R3 + ESR));
 
-    value = (((float) getTimerValue(INDUCTANCE_TIMER) * (R3 + ESR)) / INDUCTANCE_DIV);
+    value = (INDUCTANCE_A * x * x) + (INDUCTANCE_B * x) + (INDUCTANCE_C);
 
     if (value < 0)
         value = 0;
