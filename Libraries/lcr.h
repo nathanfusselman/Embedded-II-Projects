@@ -29,7 +29,7 @@ typedef enum state {IDLE,TESTING_R,TESTING_C,TESTING_L,CANCELED} STATE;
 
 typedef struct result {
     TYPE type;
-    float value;
+    double value;
     char valueString[8];
 } RESULT;
 
@@ -41,17 +41,18 @@ void initLCR(void);
 void onAC0(void);
 void runTest(uint8_t test);
 RESULT runMeasure(TYPE type, bool first);
-float testESR(bool first);
-float testResistance(bool first);
-float testCapacitance(bool first);
-float testInductance(bool first);
-float testVoltage(bool first);
-float getVoltage();
+double testESR(bool first);
+double testResistance(bool first);
+double testCapacitance(bool first);
+double testInductance(bool first);
+double testVoltage(bool first);
+double getVoltage();
+double getTime(uint64_t cycles);
 void cancelTest(void);
 void setOff(void);
 void reverse(char* str, int len);
 int intToStr(int x, char str[], int d);
-void ftoa(float n, char* res, int afterpoint);
+void ftoa(double n, char* res, int afterpoint);
 int power(uint8_t b, uint8_t e);
 void AC0Trigger();
 

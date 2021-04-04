@@ -20,32 +20,6 @@
 #include "clock.h"
 #include "tm4c123gh6pm.h"
 
-// Enum values for clock speeds
-typedef enum _XTAL
-{
-    _4MHZ = 0x06,
-    _4_096MHZ = 0x07,
-    _4_9152MHZ = 0x08,
-    _5MHZ = 0x09,
-    _5_12MHZ = 0x0A,
-    _6MHZ = 0x0B,
-    _6_144MHZ = 0x0C,
-    _7_3728MHZ= 0x0D,
-    _8MHZ = 0x0E,
-    _8_192MHZ = 0x0F,
-    _10_0MHZ = 0x10,
-    _12_0MHZ = 0x11,
-    _12_288MHZ = 0x12,
-    _13_56MHZ = 0x13,
-    _14_31818MHZ = 0x14,
-    _16_0MHZ = 0x15,
-    _16_384MHZ = 0x16,
-    _18_0MHZ = 0x17,
-    _20_0MHZ = 0x18,
-    _24_0MHZ = 0x19,
-    _25_0MHZ = 0x1A
-} XTAL;
-
 //-----------------------------------------------------------------------------
 // Global variables
 //-----------------------------------------------------------------------------
@@ -61,7 +35,13 @@ void initSystemClockTo40Mhz(void)
     SYSCTL_RCC_R = SYSCTL_RCC_XTAL_16MHZ | SYSCTL_RCC_OSCSRC_MAIN | SYSCTL_RCC_USESYSDIV | (4 << SYSCTL_RCC_SYSDIV_S);
 }
 
-void initSystemClock(XTAL xtal)
+void initSystemClockTo80Mhz(void)
 {
-    SYSCTL_RCC_R = (xtal << 6) | 0x0;
+    initSystemClock(_40MHZ, _16_0MHZ, MOSC);
+    SYSCTL_RCC2_R = (1 << 31) | (1 << 30) | (0x02 << 23) | (0 << 22) | (0x0 << 4);
+}
+
+void initSystemClock(SYSDIV sysdiv, XTAL xtal, OSCSRC oscsrc)
+{
+    SYSCTL_RCC_R = (sysdiv << 23) | (1 << 22) | (xtal << 6) | (oscsrc << 4) | 0x0;
 }

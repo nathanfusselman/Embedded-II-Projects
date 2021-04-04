@@ -15,6 +15,6 @@
 // Subroutines
 //-----------------------------------------------------------------------------
 
-void waitMicrosecond(uint32_t us);
+void waitMicrosecond(uint64_t us);
 
 #endif

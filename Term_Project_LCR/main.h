@@ -20,6 +20,8 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
+#define PROCESSOR_FREQUENCY 80000000
+
 #include <stdint.h>
 #include <stdbool.h>
 #include "tm4c123gh6pm.h"

@@ -27,6 +27,7 @@
 #include "gpio.h"
 #include "uart0.h"
 #include "lcr.h"
+#include "timers.h"
 #include "display.h"
 #include "buttons.h"
 
@@ -45,8 +46,8 @@ STATUS currentStatus = STOPPED;
 // Initialize Hardware
 void initHw()
 {
-    // Initialize system clock to 40 MHz
-    initSystemClockTo40Mhz();
+    //initSystemClock(_50MHZ, _16_0MHZ, MOSC);
+    initSystemClockTo80Mhz();
 }
 
 void handleButtonPressed(uint8_t buttonNum)
@@ -200,13 +201,6 @@ void handleMeasure(TYPE test)
         if (result.value == -1)
             return;
 
-        if (result.value == -2)
-        {
-            writeDisplayLine(1, "      HIGH      ");
-            waitMicrosecond(1000000);
-            return;
-        }
-
         switch (result.type)
         {
         case Voltage:
@@ -226,7 +220,7 @@ void handleMeasure(TYPE test)
             break;
         }
 
-        if (result.valueString[7] == '.') // Removes Trailing '.'
+        if (result.valueString[7] == '.')
             result.valueString[7] = ' ';
 
         for (i = 0; i < 8; i++)
@@ -251,7 +245,6 @@ void handleMeasure(TYPE test)
 int main(void)
 {
     // Initialize hardware
-
     initHw();
     initLCR();
     initDisp();
@@ -269,8 +262,5 @@ int main(void)
 
     toHomePage();
 
-    //handleButtonPressed(2);
-
-    // Endless loop
     while(true);
 }

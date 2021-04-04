@@ -18,6 +18,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <math.h>
 #include "gpio.h"
 #include "wait.h"
 #include "lcr.h"
@@ -27,28 +28,32 @@
 #include "main.h"
 #include "tm4c123gh6pm.h"
 
-#define HIGH_LEVEL 3.3      // High Voltage
-#define LOW_LEVEL 0         // Low Voltage
-#define ADC_RES 4096.0      // Resolution of the ADC module
-#define R3 33               // R3 Resistor value
+#define DELAY 250000
 
-#define ESR_OFFSET 5
-#define ESR_MULT 1.2
+#define HIGH_LEVEL 3.3       // High Voltage
+#define LOW_LEVEL 0          // Low Voltage
+#define ADC_RES 4096.0       // Resolution of the ADC module
+#define R3 33                // R3 Resistor value 33 Ohms
+#define R15 100000           // R15 Resistor value 100k Ohms
+#define C1 1e-6              // C1 Capacitance value 1 uF
+#define COMP_THREASHOLD 2.469// Voltage level of Comparator
 
-#define RESISTANCE_OFFSET -8      // 0Ohm Timer offset
-#define RESISTANCE_MULT 0.0188
-#define RESISTANCE_MIN 100
+#define RESISTANCE_MULT 1
+#define RESISTANCE_DELAY 1000
 #define RESISTANCE_TIMER WTIMER_0
 
-#define CAPACITANCE_MULT 0.00000018
+#define CAPACITANCE_MULT 1000000
+#define CAPACITANCE_DELAY 3000
 #define CAPACITANCE_TIMER WTIMER_0
 
-#define INDUCTANCE_A -1.029e-7
-#define INDUCTANCE_B 0.0211
-#define INDUCTANCE_C -21.5
+#define INDUCATNCE_CAL_CUTOFF 100
+#define INDUCTANCE_CAL_MULT 1.3196
+#define INDUCTANCE_CAL_OFFSET -21.179
+#define INDUCTANCE_MULT 1000000
+#define INDUCTANCE_DELAY 50
 #define INDUCTANCE_TIMER WTIMER_0
 
-#define DELAY 250000
+#define ESR_OFFSET 0.40
 
 #define MEAS_LR PORTA,2
 #define MEAS_C PORTA,3
@@ -175,31 +180,30 @@ RESULT runMeasure(TYPE type, bool first)
     return result;
 }
 
-float testESR(bool first)
+double testVoltage(bool first)
 {
     setOff();
 
-    setPinValue(MEAS_LR, 1);
-    setPinValue(LOWSIDE_R, 1);
+    setPinValue(MEAS_C, 1);
 
     if (first)
         printWaiting(0);
 
     waitMicrosecond(DELAY);
 
-    float DUT2 = getVoltage();
+    double value = getVoltage();
 
     if (currentState == CANCELED)
         return -1;
 
     setOff();
 
-    return (((R3 * (HIGH_LEVEL - DUT2)) / DUT2) - ESR_OFFSET) * ESR_MULT;
+    return value;
 }
 
-float testResistance(bool first)
+double testResistance(bool first)
 {
-    float value = 0;
+    double value = 0;
 
     uint8_t count = 0;
 
@@ -220,10 +224,10 @@ float testResistance(bool first)
 
     resetTimer(RESISTANCE_TIMER);
 
+    enableTimer(RESISTANCE_TIMER);
+
     setPinValue(LOWSIDE_R, 0);
     setPinValue(MEAS_LR, 1);
-
-    enableTimer(RESISTANCE_TIMER);
 
     while (currentState == TESTING_R)
     {
@@ -234,24 +238,33 @@ float testResistance(bool first)
         }
     }
 
-    value = ((RESISTANCE_MULT * ((float) getTimerValue(RESISTANCE_TIMER))) + RESISTANCE_OFFSET);
+    disableACInterrupt(0);
+
+    setOff();
+
+    uint64_t raw_t = getTimerValue(RESISTANCE_TIMER);
+
+    double t = getTime((double) raw_t - RESISTANCE_DELAY);
+
+    if (raw_t < RESISTANCE_DELAY)
+        t = 0;
+
+    value = -(t / ( C1 * log( -( (COMP_THREASHOLD - HIGH_LEVEL) / HIGH_LEVEL ) ) ) ); // Derived from RC charging equation
+
+    value *= RESISTANCE_MULT;
 
     if (value < 0)
         value = 0;
 
-    disableACInterrupt(0);
-
     if (currentState == CANCELED)
             return -1;
-
-    setOff();
 
     return value;
 }
 
-float testCapacitance(bool first)
+double testCapacitance(bool first)
 {
-    float value = 0;
+    double value = 0;
 
     uint8_t count = 0;
 
@@ -270,10 +283,10 @@ float testCapacitance(bool first)
 
     resetTimer(CAPACITANCE_TIMER);
 
+    enableTimer(CAPACITANCE_TIMER);
+
     setPinValue(LOWSIDE_R, 0);
     setPinValue(HIGHSIDE_R, 1);
-
-    enableTimer(CAPACITANCE_TIMER);
 
     while (currentState == TESTING_C)
     {
@@ -284,39 +297,48 @@ float testCapacitance(bool first)
         }
     }
 
-    value = ((float) getTimerValue(CAPACITANCE_TIMER) * CAPACITANCE_MULT);
+    disableACInterrupt(0);
+
+    setOff();
+
+    uint64_t raw_t = getTimerValue(CAPACITANCE_TIMER);
+
+    double t = getTime((double) raw_t - CAPACITANCE_DELAY);
+
+    if (raw_t < CAPACITANCE_DELAY)
+        t = 0;
+
+    value = -(t / ( R15 * log( -( (COMP_THREASHOLD - HIGH_LEVEL) / HIGH_LEVEL ) ) ) ); // Derived from RC charging equation
+
+    value *= CAPACITANCE_MULT; // Convert to uF
 
     if (value < 0)
         value = 0;
 
-    disableACInterrupt(0);
-
     if (currentState == CANCELED)
             return -1;
-
-    setOff();
 
     return value;
 }
 
-float testInductance(bool first)
+double testInductance(bool first)
 {
-    float value = 0;
+    double value = 0;
 
     uint8_t count = 0;
 
     setOff();
 
-    float ESR = testESR(false);
-
-    if (ESR > 6)
-        return -2;
+    double ESR = testESR(false);
 
     setOff();
 
     setPinValue(LOWSIDE_R, 1);
+    setPinValue(MEAS_C, 1);
 
     waitMicrosecond(DELAY);
+
+    setPinValue(MEAS_C, 0);
 
     enableACInterrupt(0);
 
@@ -326,9 +348,9 @@ float testInductance(bool first)
 
     resetTimer(INDUCTANCE_TIMER);
 
-    setPinValue(MEAS_LR, 1);
-
     enableTimer(INDUCTANCE_TIMER);
+
+    setPinValue(MEAS_LR, 1);
 
     while (currentState == TESTING_L)
     {
@@ -339,49 +361,80 @@ float testInductance(bool first)
         }
     }
 
-    float x = ((float) getTimerValue(INDUCTANCE_TIMER) * (R3 + ESR));
+    disableACInterrupt(0);
 
-    value = (INDUCTANCE_A * x * x) + (INDUCTANCE_B * x) + (INDUCTANCE_C);
+    setOff();
+
+    uint64_t raw_t = getTimerValue(INDUCTANCE_TIMER);
+
+    double t = getTime((double) raw_t - INDUCTANCE_DELAY);
+
+    if (raw_t < INDUCTANCE_DELAY)
+        t = 0;
+
+    double I = COMP_THREASHOLD / R3;
+
+    double R = ESR + R3;
+
+    value = -( ( R * t ) / log( -( ( ( R * I ) - HIGH_LEVEL ) / HIGH_LEVEL ) ) );
+
+    value *= INDUCTANCE_MULT; // Convert to uH
+
+    if (value < INDUCATNCE_CAL_CUTOFF)
+        value = ( ( INDUCTANCE_CAL_MULT * value ) + INDUCTANCE_CAL_OFFSET );
 
     if (value < 0)
         value = 0;
 
-    disableACInterrupt(0);
-
     if (currentState == CANCELED)
             return -1;
-
-    setOff();
 
     return value;
 }
 
-float testVoltage(bool first)
+double testESR(bool first)
 {
+    double value = 0;
+
     setOff();
 
-    setPinValue(MEAS_C, 1);
+    setPinValue(MEAS_LR, 1);
+    setPinValue(LOWSIDE_R, 1);
 
     if (first)
         printWaiting(0);
 
     waitMicrosecond(DELAY);
 
-    float value = getVoltage();
+    double raw_DUT2 = getVoltage();
+
+    setOff();
 
     if (currentState == CANCELED)
         return -1;
 
-    setOff();
+    double DUT2 = raw_DUT2 + ESR_OFFSET;
+
+    if (DUT2 > HIGH_LEVEL)
+        DUT2 = HIGH_LEVEL;
+
+    value = ( ( ( HIGH_LEVEL * R3 ) / DUT2 ) - R3 ); // Derived from Voltage Divider Law
 
     return value;
 }
 
-float getVoltage()
+double getVoltage()
 {
     uint16_t raw = readADCSS(0,0);
 
-    return ((float) raw / (ADC_RES / HIGH_LEVEL));
+    return ((double) raw / (ADC_RES / HIGH_LEVEL));
+}
+
+double getTime(uint64_t cycles)
+{
+    double dCycles = (double) cycles;
+    double dFreq = (double) PROCESSOR_FREQUENCY;
+    return (dCycles / dFreq);
 }
 
 void cancelTest()
@@ -435,11 +488,11 @@ int intToStr(int x, char str[], int d)
     return i;
 }
 
-void ftoa(float n, char* res, int afterpoint)
+void ftoa(double n, char* res, int afterpoint)
 {
     int ipart = (int)n;
 
-    float fpart = n - (float)ipart;
+    double fpart = n - (double)ipart;
 
     int i = intToStr(ipart, res, 0);
 
