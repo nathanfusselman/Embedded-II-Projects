@@ -325,11 +325,20 @@ double testInductance(bool first)
 {
     double value = 0;
 
+    uint64_t raw_t = 0;
+
     uint8_t count = 0;
+
+    uint8_t level = 0x5;
 
     setOff();
 
     double ESR = testESR(false);
+
+    if (ESR < 5)
+        level = 0xF;
+
+    initAC(0, true, false, level, 0x02, true);
 
     setOff();
 
@@ -365,14 +374,14 @@ double testInductance(bool first)
 
     setOff();
 
-    uint64_t raw_t = getTimerValue(INDUCTANCE_TIMER);
+    raw_t = getTimerValue(INDUCTANCE_TIMER);
 
     double t = getTime((double) raw_t - INDUCTANCE_DELAY);
 
     if (raw_t < INDUCTANCE_DELAY)
         t = 0;
 
-    double I = COMP_THREASHOLD / R3;
+    double I = (0.786 + (level * 0.112)) / R3;
 
     double R = ESR + R3;
 
@@ -388,6 +397,8 @@ double testInductance(bool first)
 
     if (currentState == CANCELED)
             return -1;
+
+    initAC(0, true, false, 0xF, 0x02, true);
 
     return value;
 }
