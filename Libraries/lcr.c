@@ -46,9 +46,11 @@
 #define CAPACITANCE_DELAY 3000
 #define CAPACITANCE_TIMER WTIMER_0
 
-#define INDUCATNCE_CAL_CUTOFF 100
-#define INDUCTANCE_CAL_MULT 1.3196
-#define INDUCTANCE_CAL_OFFSET -21.179
+#define INDUCATNCE_CAL_CUTOFF 0
+#define INDUCTANCE_CAL_MULT_LOW 1.3196
+#define INDUCTANCE_CAL_OFFSET_LOW -21.179
+#define INDUCTANCE_CAL_MULT_HIGH 1.1
+#define INDUCTANCE_CAL_OFFSET_HIGH -21.179
 #define INDUCTANCE_MULT 1000000
 #define INDUCTANCE_DELAY 50
 #define INDUCTANCE_TIMER WTIMER_0
@@ -60,10 +62,10 @@
 #define HIGHSIDE_R PORTA,4
 #define LOWSIDE_R PORTA,5
 #define INTEGRATE PORTA,6
-#define SENSE_ADC PORTD,2
+#define SENSE_ADC PORTD,3
 #define SENSE_AC PORTC,7
 
-#define SENSE_ADC_AIN 5
+#define SENSE_ADC_AIN 4
 #define SENSE_ADC_HS 4
 #define SENSE_ADC_D 0x100
 
@@ -173,7 +175,7 @@ RESULT runMeasure(TYPE type, bool first)
         result.value = testESR(first);
         break;
     default:
-        result.value = 99.99999;
+        result = testAuto(first);
         break;
     }
     ftoa(result.value, result.valueString, 8);
@@ -390,7 +392,9 @@ double testInductance(bool first)
     value *= INDUCTANCE_MULT; // Convert to uH
 
     if (value < INDUCATNCE_CAL_CUTOFF)
-        value = ( ( INDUCTANCE_CAL_MULT * value ) + INDUCTANCE_CAL_OFFSET );
+        value = ( ( INDUCTANCE_CAL_MULT_LOW * value ) + INDUCTANCE_CAL_OFFSET_LOW );
+    else
+        value = ( ( INDUCTANCE_CAL_MULT_HIGH * value ) + INDUCTANCE_CAL_OFFSET_HIGH );
 
     if (value < 0)
         value = 0;
@@ -432,6 +436,65 @@ double testESR(bool first)
     value = ( ( ( HIGH_LEVEL * R3 ) / DUT2 ) - R3 ); // Derived from Voltage Divider Law
 
     return value;
+}
+
+RESULT testAuto(bool first)
+{
+    RESULT result;
+
+    setOff();
+
+    setPinValue(MEAS_C, 1);
+
+    if (first)
+        printWaiting(0);
+
+    waitMicrosecond(DELAY);
+
+    double v1 = getVoltage();
+
+    waitMicrosecond(DELAY * 5);
+
+    double v2 = getVoltage();
+
+    setOff();
+
+    double esr = testESR(first);
+
+    if ((v1 / v2) > 0.95 && (v1 / v2) < 1.05)
+    {
+        if (esr > 15)
+        {
+            result.type = Resistance;
+            result.value = testResistance(first);
+        }
+        if (esr < 15)
+        {
+            result.type = Inductance;
+            result.value = testInductance(first);
+        }
+    }
+    else
+    {
+        if (v1 < v2)
+        {
+            result.type = Capacitance;
+            result.value = testCapacitance(first);
+        }
+        if (v1 > v2)
+        {
+            result.type = Inductance;
+            result.value = testInductance(first);
+        }
+    }
+
+    if (currentState == CANCELED)
+    {
+        result.type = AUTO;
+        result.value = -1;
+    }
+
+    return result;
 }
 
 double getVoltage()

@@ -46,6 +46,7 @@ double testResistance(bool first);
 double testCapacitance(bool first);
 double testInductance(bool first);
 double testVoltage(bool first);
+RESULT testAuto(bool first);
 double getVoltage();
 double getTime(uint64_t cycles);
 void cancelTest(void);

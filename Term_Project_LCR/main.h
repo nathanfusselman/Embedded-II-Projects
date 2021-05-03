@@ -34,7 +34,7 @@
 #include "display.h"
 #include "buttons.h"
 
-typedef enum mode {Norm,Test} MODE;
+typedef enum mode {Norm,Test,Uart} MODE;
 
 typedef enum status {STOPPED,TESTING} STATUS;
 
@@ -44,9 +44,10 @@ typedef enum status {STOPPED,TESTING} STATUS;
 
 void initHw(void);
 void handleButtonPressed(uint8_t buttonNum);
+void toUartPage();
 void toHomePage();
 void toTestPage();
 uint8_t printWaiting(uint8_t num);
-void handleMeasure(TYPE test);
+void handleMeasure(TYPE test, bool repeat);
 
 #endif

@@ -46,7 +46,7 @@ STATUS currentStatus = STOPPED;
 // Initialize Hardware
 void initHw()
 {
-    //initSystemClock(_50MHZ, _16_0MHZ, MOSC);
+    //initSystemClock(_40MHZ, _16_0MHZ, MOSC);
     initSystemClockTo80Mhz();
 }
 
@@ -62,22 +62,22 @@ void handleButtonPressed(uint8_t buttonNum)
                 toHomePage();
                 break;
             case 1:
-                handleMeasure(Voltage);
+                handleMeasure(Resistance, true);
                 break;
             case 2:
-                handleMeasure(Resistance);
+                handleMeasure(Capacitance, true);
                 break;
             case 3:
-                handleMeasure(Capacitance);
+                handleMeasure(Inductance, true);
                 break;
             case 4:
-                handleMeasure(Inductance);
+                handleMeasure(ESR, true);
                 break;
             case 5:
-                handleMeasure(ESR);
+                handleMeasure(Voltage, true);
                 break;
             case 6:
-                handleMeasure(AUTO);
+                handleMeasure(AUTO, true);
                 break;
             case 7:
                 cancelTest();
@@ -94,21 +94,27 @@ void handleButtonPressed(uint8_t buttonNum)
                 break;
             case 1:
                 writeDisplay("   LCR TESTER   \nDUT1: 3.10-3.20V");
+                putsUart0("\n   LCR TESTER   \nDUT1: 3.10-3.20V\n");
                 break;
             case 2:
                 writeDisplay("   LCR TESTER   \nDUT1: 0.10-0.20V");
+                putsUart0("\n   LCR TESTER   \nDUT1: 0.10-0.20V\n");
                 break;
             case 3:
                 writeDisplay("   LCR TESTER   \nDUT2: 3.00-3.15V");
+                putsUart0("\n   LCR TESTER   \nDUT2: 3.00-3.15V\n");
                 break;
             case 4:
                 writeDisplay("   LCR TESTER   \nDUT2: 0.10-0.20V");
+                putsUart0("\n   LCR TESTER   \nDUT2: 0.10-0.20V\n");
                 break;
             case 5:
                 writeDisplay("   LCR TESTER   \nDUT2: 0.15-0.25V");
+                putsUart0("\n   LCR TESTER   \nDUT2: 0.15-0.25V\n");
                 break;
             case 6:
                 writeDisplay("   LCR TESTER   \nDUT2: 3.00-3.15V");
+                putsUart0("\n   LCR TESTER   \nDUT2: 3.00-3.15V\n");
                 break;
             case 7:
                 toTestPage();
@@ -123,6 +129,7 @@ void toHomePage()
     currentStatus = STOPPED;
     currentMode = Norm;
     writeDisplay("  LCR PROJECT!   \n    WELCOME!    ");
+    putsUart0("\n  LCR PROJECT!   \n    WELCOME!    \n");
 }
 
 void toTestPage()
@@ -131,6 +138,7 @@ void toTestPage()
     currentMode = Test;
     testDisplay();
     writeDisplay("   LCR TESTER   \nDUT1, DUT2: XXXX");
+    putsUart0("\n   LCR TESTER   \nDUT1, DUT2: XXXX\n");
     runTest(7);
 }
 
@@ -154,7 +162,7 @@ uint8_t printWaiting(uint8_t num)
     return 0;
 }
 
-void handleMeasure(TYPE test)
+void handleMeasure(TYPE test, bool repeat)
 {
     currentStatus = TESTING;
     clearDisplay();
@@ -164,6 +172,7 @@ void handleMeasure(TYPE test)
     bool first = true;
 
     char * suffix = " __ ";
+    char * suffixUart = " __ ";
 
     char fullString[] = "                 ";
 
@@ -171,25 +180,31 @@ void handleMeasure(TYPE test)
     {
     case Voltage:
         writeDisplayLine(0, "    VOLTAGE     ");
+        putsUart0("\nMeasuring Voltage: \n");
         break;
     case Resistance:
         writeDisplayLine(0, "   RESISTANCE   ");
+        putsUart0("\nMeasuring Resistance: \n");
         break;
     case Capacitance:
         writeDisplayLine(0, "  CAPACITANCE    ");
+        putsUart0("\nMeasuring Capacitance: \n");
         break;
     case Inductance:
         writeDisplayLine(0, "   INDUCTANCE   ");
+        putsUart0("\nMeasuring Inductance: \n");
         break;
     case ESR:
         writeDisplayLine(0, "      ESR       ");
+        putsUart0("\nMeasuring ESR: \n");
         break;
     case AUTO:
         writeDisplayLine(0, "      AUTO      ");
+        putsUart0("\nMeasuring Auto: \n");
         break;
     }
 
-    while (true)
+    do
     {
         RESULT result = runMeasure(test, first);
 
@@ -205,18 +220,23 @@ void handleMeasure(TYPE test)
         {
         case Voltage:
             suffix = " V  ";
+            suffixUart = " V  ";
             break;
         case Resistance:
             suffix = " ^0 ";
+            suffixUart = " Ohm";
             break;
         case Capacitance:
             suffix = " ^1F";
+            suffixUart = " uF ";
             break;
         case Inductance:
             suffix = " ^1H";
+            suffixUart = " uH ";
             break;
         case ESR:
             suffix = " ^0 ";
+            suffixUart = " Ohm";
             break;
         }
 
@@ -234,8 +254,13 @@ void handleMeasure(TYPE test)
         }
 
         writeDisplayLine(1, fullString);
+        putcUart0('\t');
+        putsUart0(result.valueString);
+        putsUart0(suffixUart);
+        putcUart0('\n');
         waitMicrosecond(1000000);
     }
+    while (repeat);
 }
 
 //-----------------------------------------------------------------------------
@@ -244,13 +269,15 @@ void handleMeasure(TYPE test)
 
 int main(void)
 {
+    USER_DATA serialData;
+
     // Initialize hardware
     initHw();
     initLCR();
     initDisp();
     initButtons();
     initUart0();
-    setUart0BaudRate(115200, 40e6);
+    setUart0BaudRate(115200, PROCESSOR_FREQUENCY);
 
     uint8_t ohm[] = {0,14,17,17,17,10,27,0};
     uint8_t micro[] = {0,0,18,18,18,29,16,16};
@@ -262,5 +289,74 @@ int main(void)
 
     toHomePage();
 
-    while(true);
+    while(true)
+    {
+        if (kbhitUart0())
+        {
+            getsUart0(&serialData);
+            parseFields(&serialData);
+            bool validCmd = false;
+            if (isCommand(&serialData, "HELP", 0))
+            {
+                putsUart0("List of available commands:\n");
+                putsUart0("\tHELP\n");
+                putsUart0("\tRES\n");
+                putsUart0("\tCAP\n");
+                putsUart0("\tINDUCT\n");
+                putsUart0("\tESR\n");
+                putsUart0("\tVOLT\n");
+                putsUart0("\tAUTO\n");
+                putsUart0("\tTEST\n");
+                putsUart0("\tCANCEL\n");
+                validCmd = true;
+            }
+            if (isCommand(&serialData, "RES", 0))
+            {
+                handleMeasure(Resistance, false);
+                validCmd = true;
+            }
+            if (isCommand(&serialData, "CAP", 0))
+            {
+                handleMeasure(Capacitance, false);
+                validCmd = true;
+            }
+            if (isCommand(&serialData, "INDUCT", 0))
+            {
+                handleMeasure(Inductance, false);
+                validCmd = true;
+            }
+            if (isCommand(&serialData, "ESR", 0))
+            {
+                handleMeasure(ESR, false);
+                validCmd = true;
+            }
+            if (isCommand(&serialData, "VOLT", 0))
+            {
+                handleMeasure(Voltage, false);
+                validCmd = true;
+            }
+            if (isCommand(&serialData, "AUTO", 0))
+            {
+                handleMeasure(AUTO, false);
+                validCmd = true;
+            }
+            if (isCommand(&serialData, "TEST", 0))
+            {
+                cancelTest();
+                toTestPage();
+                validCmd = true;
+            }
+            if (isCommand(&serialData, "CANCEL", 0))
+            {
+                cancelTest();
+                toHomePage();
+                validCmd = true;
+            }
+            if (!validCmd)
+            {
+                if(serialData.fieldCount != 0)
+                    putsUart0("*Invalid command.Try again*\n");
+            }
+        }
+    }
 }

@@ -25,12 +25,12 @@
 #include "tm4c123gh6pm.h"
 
 #define Button0 PORTF,4
-#define Button1 PORTE,0
-#define Button2 PORTE,1
-#define Button3 PORTE,2
-#define Button4 PORTE,3
-#define Button5 PORTE,4
-#define Button6 PORTE,5
+#define Button1 PORTE,2
+#define Button2 PORTE,5
+#define Button3 PORTE,1
+#define Button4 PORTE,4
+#define Button5 PORTE,3
+#define Button6 PORTE,0
 #define Button7 PORTF,0
 
 //-----------------------------------------------------------------------------
