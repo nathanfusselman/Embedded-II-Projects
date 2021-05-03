@@ -50,6 +50,12 @@ void initHw()
     initSystemClockTo80Mhz();
 }
 
+//Restart the System
+void rebootSystem()
+{
+    NVIC_APINT_R = (0x05FA0000 | NVIC_APINT_SYSRESETREQ);
+}
+
 void handleButtonPressed(uint8_t buttonNum)
 {
     if (buttonNum != 255)
@@ -308,49 +314,55 @@ int main(void)
                 putsUart0("\tAUTO\n");
                 putsUart0("\tTEST\n");
                 putsUart0("\tCANCEL\n");
+                putsUart0("\tREBOOT\n");
                 validCmd = true;
             }
             if (isCommand(&serialData, "RES", 0))
             {
-                handleMeasure(Resistance, false);
                 validCmd = true;
+                handleMeasure(Resistance, false);
             }
             if (isCommand(&serialData, "CAP", 0))
             {
-                handleMeasure(Capacitance, false);
                 validCmd = true;
+                handleMeasure(Capacitance, false);
             }
             if (isCommand(&serialData, "INDUCT", 0))
             {
-                handleMeasure(Inductance, false);
                 validCmd = true;
+                handleMeasure(Inductance, false);
             }
             if (isCommand(&serialData, "ESR", 0))
             {
-                handleMeasure(ESR, false);
                 validCmd = true;
+                handleMeasure(ESR, false);
             }
             if (isCommand(&serialData, "VOLT", 0))
             {
-                handleMeasure(Voltage, false);
                 validCmd = true;
+                handleMeasure(Voltage, false);
             }
             if (isCommand(&serialData, "AUTO", 0))
             {
-                handleMeasure(AUTO, false);
                 validCmd = true;
+                handleMeasure(AUTO, false);
             }
             if (isCommand(&serialData, "TEST", 0))
             {
+                validCmd = true;
                 cancelTest();
                 toTestPage();
-                validCmd = true;
             }
             if (isCommand(&serialData, "CANCEL", 0))
             {
+                validCmd = true;
                 cancelTest();
                 toHomePage();
+            }
+            if (isCommand(&serialData, "REBOOT", 0))
+            {
                 validCmd = true;
+                rebootSystem();
             }
             if (!validCmd)
             {

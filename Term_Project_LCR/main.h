@@ -43,6 +43,7 @@ typedef enum status {STOPPED,TESTING} STATUS;
 //-----------------------------------------------------------------------------
 
 void initHw(void);
+void rebootSystem(void);
 void handleButtonPressed(uint8_t buttonNum);
 void toUartPage();
 void toHomePage();
