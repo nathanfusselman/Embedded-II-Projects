@@ -24,9 +24,9 @@
 // Approximate busy waiting (in units of microseconds), given a PROCESSOR_FREQUENCY MHz system clock
 void waitMicrosecond(uint64_t us)
 {
-    us = (us * PROCESSOR_FREQUENCY / 5000000);
+    us = ((us * 0.000001 * PROCESSOR_FREQUENCY) / 6);
     __asm("WMS_LOOP:    SUB  R0, #1");         // 1
-    __asm("             CBZ  R0, WMS_DONE");   // 1
+    __asm("             CBZ  R0, WMS_DONE");   // 1*2
     __asm("             B    WMS_LOOP");       // 1*2 (speculative, so P=1)
     __asm("WMS_DONE:");                        // ---
                                                // PROCESSOR_FREQUENCY clocks/us + error
