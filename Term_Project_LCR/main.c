@@ -135,7 +135,7 @@ void toHomePage()
     currentStatus = STOPPED;
     currentMode = Norm;
     writeDisplay("  LCR PROJECT!   \n    WELCOME!    ");
-    putsUart0("\n  LCR PROJECT!   \n    WELCOME!    \n");
+    putsUart0("\n  LCR PROJECT!   \n    WELCOME!    \n\n");
 }
 
 void toTestPage()
